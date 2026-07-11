@@ -15,7 +15,7 @@
 <body class="home-page">
 <header class="site-header">
 <a class="brand" href="index.html">
-<img alt="Butler's Pizza" src="assets/Main-logo.png"/>
+<img alt="Butler's Pizza" src="assets/Main-Logo.png"/>
 </a>
 <nav class="main-nav">
 <a class="active" href="index.html">
@@ -39,66 +39,53 @@
 </a>
 </header>
 <main>
-<section class="hero">
-<div class="hero-copy">
-<h1>
-      Cape Town's
-      <strong>
-       No.1
-      </strong>
-      Pizza!
-     </h1>
-<p class="since">
-      Since 1989
-     </p>
-<p>
-      Made with love, baked to perfection and delivered with a smile.
-     </p>
-<div class="hero-buttons">
+<section aria-labelledby="home-classic-title" class="home-classic-hero">
+<div class="home-classic-copy">
+<h1 id="home-classic-title">
+<span class="home-classic-line">Cape Town’s</span>
+<span class="home-classic-line"><strong>No.1</strong> Pizza!</span>
+</h1>
+<p class="home-classic-since">Since 1989</p>
+<p class="home-classic-description">
+      Made with love, baked to perfection<br/>
+      and delivered with a smile.
+    </p>
+<div class="home-classic-actions">
 <a class="btn red" href="order-now.html">
-       Order Now
-       <span class="circle-icon">
-        ➜
-       </span>
+        Order Now <span class="circle-icon">➜</span>
 </a>
 <a class="btn yellow" href="menu.html">
-       View Menu
-       <span class="circle-icon">
-        ➜
-       </span>
+        View Menu <span class="circle-icon">➜</span>
 </a>
 </div>
 </div>
-<div class="hero-visual">
-<img alt="Butler's Pizza delivery car" class="hero-car" src="assets/delivery-car-trim.png"/>
-<div class="bubble">
-      Order
-      <br/>
-      via
-      <br/>
-      live chat
-     </div>
-<div class="badges">
-<div class="badge">
-<span>
-        🚚
-       </span>
-       Free Delivery
-      </div>
-<div class="badge">
-<span>
-        🔥
-       </span>
-       Fresh Dough Daily
-      </div>
-<div class="badge">
-<span>
-        🌿
-       </span>
-       Vegan Options
-      </div>
+<a aria-label="Order via live chat" class="home-classic-chat" href="contact.html">
+<span>Order</span>
+<span>via</span>
+<strong>Live Chat</strong>
+</a>
+<img alt="Fresh Butler's pizza" class="home-classic-pizza" src="assets/home-hero-pizza.png"/>
+<img alt="Butler's Pizza delivery car" class="home-classic-car" src="assets/delivery-car.png"/>
+<div aria-label="Butler's Pizza benefits" class="home-classic-badges">
+<div class="home-classic-badge">
+<span aria-hidden="true" class="home-classic-badge-icon">🛵</span>
+<strong>Free Delivery</strong>
+</div>
+<div class="home-classic-badge">
+<span aria-hidden="true" class="home-classic-badge-icon">🔥</span>
+<strong>Fresh Dough<br/>Daily</strong>
+</div>
+<div class="home-classic-badge">
+<span aria-hidden="true" class="home-classic-badge-icon">🌿</span>
+<strong>Vegan<br/>Options</strong>
 </div>
 </div>
+<span aria-hidden="true" class="home-classic-heart">♡</span>
+<span aria-hidden="true" class="home-classic-cloud home-classic-cloud-one"></span>
+<span aria-hidden="true" class="home-classic-cloud home-classic-cloud-two"></span>
+<span aria-hidden="true" class="home-classic-rays home-classic-rays-left"></span>
+<span aria-hidden="true" class="home-classic-rays home-classic-rays-right"></span>
+<span aria-hidden="true" class="home-classic-star">☆</span>
 </section>
 <section class="feature-band">
 <article>
@@ -755,13 +742,16 @@
 <h3>
       Contact Us
      </h3>
-<p>
-      📞 021 686 3333
+<p class="footer-contact-line"><img alt="" aria-hidden="true" class="inline-contact-icon" src="assets/phone.png"/>
+      📞 Customer Care: 072 143 0000
      </p>
-<p>
-      ✉ info@butlers.co.za
+<p class="footer-contact-line"><img alt="" aria-hidden="true" class="inline-contact-icon" src="assets/phone.png"/>
+      📞 Head Office: 021 686 4542
      </p>
-<p>
+<p class="footer-contact-line"><img alt="" aria-hidden="true" class="inline-contact-icon" src="assets/email.png"/>
+      ✉ customercare@butlers.co.za
+     </p>
+<p class="footer-contact-line"><img alt="" aria-hidden="true" class="inline-contact-icon" src="assets/live-chat.png"/>
       🟢
       <b>
        Live Chat
@@ -774,20 +764,7 @@
 <h3>
       Follow Us
      </h3>
-<div class="socials"><a aria-label="Facebook" class="social-link facebook" href="#"><img alt="Facebook" src="assets/facebook.png"/></a><a aria-label="Instagram" class="social-link instagram" href="#"><img alt="Instagram" src="assets/instagram.png"/></a><a aria-label="X" class="social-link x" href="#"><img alt="X" src="assets/x.png"/></a></div>
-<p>
-<b>
-       Join our pizza family
-      </b>
-<br/>
-      Get exclusive deals &amp; updates!
-     </p>
-<div class="subscribe">
-<input placeholder="Your email"/>
-<button>
-       Subscribe
-      </button>
-</div>
+<div class="socials"><a aria-label="Facebook" href="https://www.facebook.com/butlerspizzaOG" rel="noopener noreferrer" target="_blank"><img alt="Facebook" src="assets/facebook.png"/></a><a aria-label="Instagram" href="https://www.instagram.com/butlerspizzaog?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" rel="noopener noreferrer" target="_blank"><img alt="Instagram" src="assets/instagram.png"/></a><a aria-label="X" href="https://x.com/ButlersPizzaSA?s=20" rel="noopener noreferrer" target="_blank"><img alt="X" src="assets/x.png"/></a></div>
 </div>
 <a class="floating-order" href="order-now.html">
      Order
@@ -807,7 +784,6 @@
     </span>
 </div>
 </footer>
-<script src="location.js">
-</script>
+<script src="script.js"></script>
 </body>
 </html>

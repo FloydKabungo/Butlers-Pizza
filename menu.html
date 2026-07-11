@@ -15,7 +15,7 @@
 <body class="menu-page">
 <header class="site-header">
 <a class="brand" href="index.html">
-<img alt="Butler's Pizza" src="assets/logo-butlers-crop.png"/>
+<img alt="Butler's Pizza" src="assets/Main-Logo.png"/>
 </a>
 <nav class="main-nav">
 <a class="" href="index.html">
@@ -39,30 +39,28 @@
 </a>
 </header>
 <main>
-<section class="page-hero menu">
-<div class="hero-copy menu-hero-copy">
-<h1>
-      Our
-      <br/>
-<strong>
-       Menu
-      </strong>
-</h1>
+<section aria-labelledby="menu-hero-title" class="menu-mockup-hero menu-hero-fixed">
+<div class="menu-mockup-copy">
+<div class="menu-mockup-title" id="menu-hero-title">
+<span>Our</span>
+<strong>Menu</strong>
+</div>
 <p>
-      Made with love, baked to perfection and delivered with a smile.
-     </p>
-<img alt="Delivery car" class="hero-car" src="assets/delivery-car-trim.png"/>
+      Made with love, baked to perfection
+      <br/>
+      and delivered with a smile.
+    </p>
+<span aria-hidden="true" class="menu-copy-underline"></span>
+<span aria-hidden="true" class="menu-doodle menu-doodle-rays"></span>
+<span aria-hidden="true" class="menu-doodle menu-doodle-dots"></span>
+<span aria-hidden="true" class="menu-doodle menu-doodle-yellow"></span>
 </div>
-<div class="page-visual">
-<img alt="Hot sliced pepperoni pizza" class="menu-hero-pizza-created" src="assets/menu-pizza-mockup-style.png"/>
-<div class="menu-scribble menu-scribble-one">
-</div>
-<div class="menu-scribble menu-scribble-two">
-</div>
+<div class="menu-mockup-visual">
+<img alt="Fresh Butler's pizza with a cheese-pull slice" class="menu-mockup-pizza" src="assets/menu-hero-pizza-visual.jpg"/>
 </div>
 </section>
-<section class="tabs-band menu-tabs">
-<div class="tab-item active">
+<section class="tabs-band menu-tabs menu-mockup-tabs">
+<button aria-pressed="true" class="tab-item active" data-filter="pizza" type="button">
 <div class="tab-icon tab-pizza">
 <svg aria-hidden="true" viewbox="0 0 64 64">
 <path d="M12 54 32 10l20 44H12Z" fill="#ffd30a" stroke="#111" stroke-linejoin="round" stroke-width="4">
@@ -78,8 +76,8 @@
 </svg>
 </div>
      Pizzas
-    </div>
-<div class="tab-item">
+    </button>
+<button aria-pressed="false" class="tab-item" data-filter="specialty" type="button">
 <div class="tab-icon tab-star">
 <svg aria-hidden="true" viewbox="0 0 64 64">
 <path d="m32 8 7 16 17 2-13 11 4 17-15-9-15 9 4-17L8 26l17-2 7-16Z" fill="#fff" stroke="#111" stroke-linejoin="round" stroke-width="4">
@@ -87,8 +85,8 @@
 </svg>
 </div>
      Specialty
-    </div>
-<div class="tab-item">
+    </button>
+<button aria-pressed="false" class="tab-item" data-filter="sides" type="button">
 <div class="tab-icon tab-sides">
 <svg aria-hidden="true" viewbox="0 0 64 64">
 <path d="M20 24h24l-4 30H24l-4-30Z" fill="#ffd30a" stroke="#111" stroke-linejoin="round" stroke-width="4">
@@ -98,8 +96,8 @@
 </svg>
 </div>
      Sides
-    </div>
-<div class="tab-item">
+    </button>
+<button aria-pressed="false" class="tab-item" data-filter="drinks" type="button">
 <div class="tab-icon tab-drinks">
 <svg aria-hidden="true" viewbox="0 0 64 64">
 <path d="M21 20h24l-4 36H25l-4-36Z" fill="#fff" stroke="#111" stroke-linejoin="round" stroke-width="4">
@@ -111,8 +109,8 @@
 </svg>
 </div>
      Drinks
-    </div>
-<div class="tab-item">
+    </button>
+<button aria-pressed="false" class="tab-item" data-filter="desserts" type="button">
 <div class="tab-icon tab-desserts">
 <svg aria-hidden="true" viewbox="0 0 64 64">
 <path d="M14 38c10-14 26-18 38-5v16H14V38Z" fill="#fff" stroke="#111" stroke-linejoin="round" stroke-width="4">
@@ -124,234 +122,786 @@
 </svg>
 </div>
      Desserts
-    </div>
+    </button>
 <div class="menu-tools">
-<input class="search" placeholder="🔍  Search menu..."/>
-<button class="sort">
-      Sort By⌄
-     </button>
+<input aria-label="Search the Butler's menu" autocomplete="off" class="search" id="menuSearch" placeholder="🔍  Search menu..." type="search"/>
+<button class="sort" id="menuSort" type="button">Sort: Featured</button>
 </div>
 </section>
-<section class="section menu-products-section menu-pizzas-section">
-<div class="menu-heading-block">
-<h2 class="section-title menu-pizza-title">
-            Pizzas
-            <span class="pizza-title-scribble"></span>
-</h2>
-<p>
-            Our classic and signature pizzas made with the freshest ingredients.
-        </p>
+<section class="complete-menu-section" id="completeMenu">
+<div class="complete-menu-intro">
+<div>
+<h2>Full Butler's Menu</h2>
+<p>Choose a category above, search for a favourite, or browse every available size and option.</p>
 </div>
-<div class="pizza-grid">
-<article class="pizza-card menu-card-1">
-<span class="pizza-corner-spark">
-</span>
-<img src="assets/pizza-hms.jpg"/>
-<div class="pizza-body">
-<h3>
-        HMS
-       </h3>
-<div class="pizza-info">
-<p>
-         Ham, mushroom,
-         <br/>
-         salami.
-        </p>
-<div class="price">
-         R132.50
-        </div>
-</div>
-<div class="card-row">
-<a class="order-card" href="order-now.html">
-         Order Now →
-        </a>
+<div aria-label="Pizza sizes" class="menu-size-key">
+<span><b>M</b> 26cm Medium</span>
+<span><b>L</b> 32cm Large</span>
 </div>
 </div>
-</article>
-<article class="pizza-card menu-card-2">
-<span class="pizza-corner-spark">
-</span>
-<img src="assets/pizza-pepperoni.jpg"/>
-<div class="pizza-body">
-<h3>
-        Pepperoni Classic
-       </h3>
-<div class="pizza-info">
-<p>
-         Extra mozzarella,
-         <br/>
-         double pepperoni.
-        </p>
-<div class="price">
-         R132.50
-        </div>
+<div class="menu-no-results" hidden="" id="menuNoResults">
+    No menu items matched your search.
+  </div>
+<section class="complete-category-block" data-section-category="pizza">
+<div class="complete-category-heading">
+<div>
+<span class="category-eyebrow">Classic &amp; signature</span>
+<h2>Pizzas</h2>
+<p>All pizzas currently listed on Butler's main delivery menu.</p>
 </div>
-<div class="card-row">
-<a class="order-card" href="order-now.html">
-         Order Now →
-        </a>
+<span class="category-count">21 pizzas</span>
 </div>
+<div class="full-menu-grid sortable-menu-grid">
+<article class="full-menu-card menu-filter-item" data-category="pizza" data-name="margherita" data-price="77.95" data-search="margherita mozzarella, secret silwood tomato sauce. vegetarian">
+<div class="full-menu-photo">
+<img alt="Margherita" src="assets/pizza-hms.jpg"/>
+<div class="menu-diet-tags"><span class="menu-diet-tag vegetarian">Vegetarian</span></div>
 </div>
-</article>
-<article class="pizza-card menu-card-3">
-<span class="pizza-corner-spark">
-</span>
-<img src="assets/pizza-holy-moly.jpg"/>
-<div class="pizza-body">
-<h3>
-        Holy Moly
-       </h3>
-<div class="pizza-info">
-<p>
-         Ham, feta, red onion,
-         <br/>
-         Butleritos chutney.
-        </p>
-<div class="price">
-         R132.50
-        </div>
+<div class="full-menu-body">
+<h3>Margherita</h3>
+<p>Mozzarella, secret Silwood tomato sauce.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R77.95</strong></div>
+<div><span>32cm Large</span><strong>R116.50</strong></div>
 </div>
-<div class="card-row">
-<a class="order-card" href="order-now.html">
-         Order Now →
-        </a>
-</div>
-</div>
-</article>
-<article class="pizza-card menu-card-4">
-<span class="pizza-corner-spark">
-</span>
-<img src="assets/pizza-groovy-greek.jpg"/>
-<div class="pizza-body">
-<h3>
-        Groovy Greek
-       </h3>
-<div class="pizza-info">
-<p>
-         Spinach, feta, olives,
-         <br/>
-         Butleritos.
-        </p>
-<div class="price">
-         R132.50
-        </div>
-</div>
-<div class="card-row">
-<a class="order-card" href="order-now.html">
-         Order Now →
-        </a>
-</div>
-</div>
-</article>
-<article class="pizza-card menu-card-5">
-<span class="pizza-corner-spark">
-</span>
-<img src="assets/pizza-groovy-greek.jpg"/>
-<div class="pizza-body">
-<h3>
-        Four Cheese
-       </h3>
-<div class="pizza-info">
-<p>
-         Mozzarella, cheddar,
-         <br/>
-         feta, parmesan.
-        </p>
-<div class="price">
-         R132.50
-        </div>
-</div>
-<div class="card-row">
-<a class="order-card" href="order-now.html">
-         Order Now →
-        </a>
-</div>
-</div>
-</article>
-<article class="pizza-card menu-card-6">
-<span class="pizza-corner-spark">
-</span>
-<img src="assets/pizza-hms.jpg"/>
-<div class="pizza-body">
-<h3>
-        BBQ Chicken
-       </h3>
-<div class="pizza-info">
-<p>
-         Chicken, BBQ sauce,
-         <br/>
-         red onion.
-        </p>
-<div class="price">
-         R132.50
-        </div>
-</div>
-<div class="card-row">
-<a class="order-card" href="order-now.html">
-         Order Now →
-        </a>
-</div>
-</div>
-</article>
-<article class="pizza-card menu-card-7">
-<span class="pizza-corner-spark">
-</span>
-<img src="assets/pizza-pepperoni.jpg"/>
-<div class="pizza-body">
-<h3>
-        Chicken Mayo
-       </h3>
-<div class="pizza-info">
-<p>
-         Chicken, mayo drizzle,
-         <br/>
-         mushroom.
-        </p>
-<div class="price">
-         R132.50
-        </div>
-</div>
-<div class="card-row">
-<a class="order-card" href="order-now.html">
-         Order Now →
-        </a>
-</div>
-</div>
-</article>
-<article class="pizza-card menu-card-8">
-<span class="pizza-corner-spark">
-</span>
-<img src="assets/pizza-hms.jpg"/>
-<div class="pizza-body">
-<h3>
-        Meaty Supreme
-       </h3>
-<div class="pizza-info">
-<p>
-         Ham, salami, bacon,
-         <br/>
-         beef, pepperoni.
-        </p>
-<div class="price">
-         R132.50
-        </div>
-</div>
-<div class="card-row">
-<a class="order-card" href="order-now.html">
-         Order Now →
-        </a>
-</div>
-</div>
-</article>
-</div>
-<div class="more-btn">
-<a class="btn red" href="order-now.html">
-      View All Pizzas
-      <span class="circle-icon">
-       →
-      </span>
+<a class="menu-order-button" href="order-now.html?item=Margherita">
+      Order Now <span>→</span>
 </a>
 </div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="pizza" data-name="cheezi margherita" data-price="101.95" data-search="cheezi margherita extra mozzarella, secret silwood tomato sauce. vegetarian">
+<div class="full-menu-photo">
+<img alt="Cheezi Margherita" src="assets/pizza-pepperoni.jpg"/>
+<div class="menu-diet-tags"><span class="menu-diet-tag vegetarian">Vegetarian</span></div>
+</div>
+<div class="full-menu-body">
+<h3>Cheezi Margherita</h3>
+<p>Extra mozzarella, secret Silwood tomato sauce.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R101.95</strong></div>
+<div><span>32cm Large</span><strong>R150.50</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Cheezi+Margherita">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="pizza" data-name="hawaii" data-price="115.50" data-search="hawaii ham and pineapple. ">
+<div class="full-menu-photo">
+<img alt="Hawaii" src="assets/pizza-holy-moly.jpg"/>
+</div>
+<div class="full-menu-body">
+<h3>Hawaii</h3>
+<p>Ham and pineapple.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R115.50</strong></div>
+<div><span>32cm Large</span><strong>R164.50</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Hawaii">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="pizza" data-name="regina" data-price="117.95" data-search="regina ham and mushroom. ">
+<div class="full-menu-photo">
+<img alt="Regina" src="assets/pizza-groovy-greek.jpg"/>
+</div>
+<div class="full-menu-body">
+<h3>Regina</h3>
+<p>Ham and mushroom.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R117.95</strong></div>
+<div><span>32cm Large</span><strong>R166.95</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Regina">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="pizza" data-name="caribbean" data-price="123.50" data-search="caribbean bacon, pineapple and banana. ">
+<div class="full-menu-photo">
+<img alt="Caribbean" src="assets/pizza-four-cheese.jpg"/>
+</div>
+<div class="full-menu-body">
+<h3>Caribbean</h3>
+<p>Bacon, pineapple and banana.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R123.50</strong></div>
+<div><span>32cm Large</span><strong>R170.50</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Caribbean">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="pizza" data-name="smog" data-price="129.50" data-search="smog salami, mushroom, onion and green pepper. ">
+<div class="full-menu-photo">
+<img alt="Smog" src="assets/pizza-bbq-chicken.jpg"/>
+</div>
+<div class="full-menu-body">
+<h3>Smog</h3>
+<p>Salami, mushroom, onion and green pepper.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R129.50</strong></div>
+<div><span>32cm Large</span><strong>R175.95</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Smog">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="pizza" data-name="hms" data-price="132.50" data-search="hms ham, mushroom and salami. ">
+<div class="full-menu-photo">
+<img alt="HMS" src="assets/pizza-chicken-mayo.jpg"/>
+</div>
+<div class="full-menu-body">
+<h3>HMS</h3>
+<p>Ham, mushroom and salami.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R132.50</strong></div>
+<div><span>32cm Large</span><strong>R181.95</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=HMS">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="pizza" data-name="vegetarian" data-price="126.50" data-search="vegetarian green pepper, mushroom, butleritos, onion and tomato. vegetarian">
+<div class="full-menu-photo">
+<img alt="Vegetarian" src="assets/pizza-meaty-supreme.jpg"/>
+<div class="menu-diet-tags"><span class="menu-diet-tag vegetarian">Vegetarian</span></div>
+</div>
+<div class="full-menu-body">
+<h3>Vegetarian</h3>
+<p>Green pepper, mushroom, Butleritos, onion and tomato.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R126.50</strong></div>
+<div><span>32cm Large</span><strong>R174.95</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Vegetarian">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="pizza" data-name="thai chicken" data-price="132.50" data-search="thai chicken thai chicken, pineapple, garlic and butleritos. ">
+<div class="full-menu-photo">
+<img alt="Thai Chicken" src="assets/pizza-hms.jpg"/>
+</div>
+<div class="full-menu-body">
+<h3>Thai Chicken</h3>
+<p>Thai chicken, pineapple, garlic and Butleritos.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R132.50</strong></div>
+<div><span>32cm Large</span><strong>R181.95</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Thai+Chicken">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="pizza" data-name="pepperoni classic" data-price="132.50" data-search="pepperoni classic extra mozzarella, double pepperoni and butleritos. ">
+<div class="full-menu-photo">
+<img alt="Pepperoni Classic" src="assets/pizza-pepperoni.jpg"/>
+</div>
+<div class="full-menu-body">
+<h3>Pepperoni Classic</h3>
+<p>Extra mozzarella, double pepperoni and Butleritos.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R132.50</strong></div>
+<div><span>32cm Large</span><strong>R181.95</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Pepperoni+Classic">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="pizza" data-name="groovy greek" data-price="132.50" data-search="groovy greek spinach, feta, olives and butleritos. vegetarian">
+<div class="full-menu-photo">
+<img alt="Groovy Greek" src="assets/pizza-holy-moly.jpg"/>
+<div class="menu-diet-tags"><span class="menu-diet-tag vegetarian">Vegetarian</span></div>
+</div>
+<div class="full-menu-body">
+<h3>Groovy Greek</h3>
+<p>Spinach, feta, olives and Butleritos.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R132.50</strong></div>
+<div><span>32cm Large</span><strong>R181.95</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Groovy+Greek">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="pizza" data-name="big cheese blue" data-price="132.50" data-search="big cheese blue bacon, butleritos and blue cheese. lite">
+<div class="full-menu-photo">
+<img alt="Big Cheese Blue" src="assets/pizza-groovy-greek.jpg"/>
+<div class="menu-diet-tags"><span class="menu-diet-tag lite">Lite</span></div>
+</div>
+<div class="full-menu-body">
+<h3>Big Cheese Blue</h3>
+<p>Bacon, Butleritos and blue cheese.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R132.50</strong></div>
+<div><span>32cm Large</span><strong>R181.95</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Big+Cheese+Blue">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="pizza" data-name="the rotherham" data-price="132.50" data-search="the rotherham bacon, feta and salami. lite">
+<div class="full-menu-photo">
+<img alt="The Rotherham" src="assets/pizza-four-cheese.jpg"/>
+<div class="menu-diet-tags"><span class="menu-diet-tag lite">Lite</span></div>
+</div>
+<div class="full-menu-body">
+<h3>The Rotherham</h3>
+<p>Bacon, feta and salami.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R132.50</strong></div>
+<div><span>32cm Large</span><strong>R181.95</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=The+Rotherham">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="pizza" data-name="meaty foursome" data-price="132.50" data-search="meaty foursome bacon, ham, salami, pepperoni and butleritos. ">
+<div class="full-menu-photo">
+<img alt="Meaty Foursome" src="assets/pizza-bbq-chicken.jpg"/>
+</div>
+<div class="full-menu-body">
+<h3>Meaty Foursome</h3>
+<p>Bacon, ham, salami, pepperoni and Butleritos.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R132.50</strong></div>
+<div><span>32cm Large</span><strong>R181.95</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Meaty+Foursome">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="pizza" data-name="porky mcgorky" data-price="132.50" data-search="porky mcgorky bacon, red pesto, feta and garlic. lite">
+<div class="full-menu-photo">
+<img alt="Porky McGorky" src="assets/pizza-chicken-mayo.jpg"/>
+<div class="menu-diet-tags"><span class="menu-diet-tag lite">Lite</span></div>
+</div>
+<div class="full-menu-body">
+<h3>Porky McGorky</h3>
+<p>Bacon, red pesto, feta and garlic.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R132.50</strong></div>
+<div><span>32cm Large</span><strong>R181.95</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Porky+McGorky">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="pizza" data-name="the plantify" data-price="161.50" data-search="the plantify green pepper, mushrooms, butleritos, tomato, red onion and vegan mozzarella. vegan">
+<div class="full-menu-photo">
+<img alt="The Plantify" src="assets/pizza-meaty-supreme.jpg"/>
+<div class="menu-diet-tags"><span class="menu-diet-tag vegan">Vegan</span></div>
+</div>
+<div class="full-menu-body">
+<h3>The Plantify</h3>
+<p>Green pepper, mushrooms, Butleritos, tomato, red onion and vegan mozzarella.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R161.50</strong></div>
+<div><span>32cm Large</span><strong>R220.50</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=The+Plantify">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="pizza" data-name="vegan vibe" data-price="145.95" data-search="vegan vibe red pesto, olives, mushrooms, garlic and vegan mozzarella. vegan">
+<div class="full-menu-photo">
+<img alt="Vegan Vibe" src="assets/pizza-hms.jpg"/>
+<div class="menu-diet-tags"><span class="menu-diet-tag vegan">Vegan</span></div>
+</div>
+<div class="full-menu-body">
+<h3>Vegan Vibe</h3>
+<p>Red pesto, olives, mushrooms, garlic and vegan mozzarella.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R145.95</strong></div>
+<div><span>32cm Large</span><strong>R197.50</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Vegan+Vibe">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="pizza" data-name="holy moly" data-price="132.50" data-search="holy moly ham, feta, red onion and butleritos chutney. ">
+<div class="full-menu-photo">
+<img alt="Holy Moly" src="assets/pizza-pepperoni.jpg"/>
+</div>
+<div class="full-menu-body">
+<h3>Holy Moly</h3>
+<p>Ham, feta, red onion and Butleritos chutney.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R132.50</strong></div>
+<div><span>32cm Large</span><strong>R181.95</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Holy+Moly">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="pizza" data-name="holy veggie" data-price="132.50" data-search="holy veggie mushrooms, feta, garlic, red onion and butleritos chutney. vegetarian">
+<div class="full-menu-photo">
+<img alt="Holy Veggie" src="assets/pizza-holy-moly.jpg"/>
+<div class="menu-diet-tags"><span class="menu-diet-tag vegetarian">Vegetarian</span></div>
+</div>
+<div class="full-menu-body">
+<h3>Holy Veggie</h3>
+<p>Mushrooms, feta, garlic, red onion and Butleritos chutney.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R132.50</strong></div>
+<div><span>32cm Large</span><strong>R181.95</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Holy+Veggie">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="pizza" data-name="phoenix" data-price="132.50" data-search="phoenix thai chicken, sriracha mayo, red onion and butleritos. ">
+<div class="full-menu-photo">
+<img alt="Phoenix" src="assets/pizza-groovy-greek.jpg"/>
+</div>
+<div class="full-menu-body">
+<h3>Phoenix</h3>
+<p>Thai chicken, Sriracha mayo, red onion and Butleritos.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R132.50</strong></div>
+<div><span>32cm Large</span><strong>R181.95</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Phoenix">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="pizza" data-name="baconator!" data-price="132.50" data-search="baconator! triple bacon. ">
+<div class="full-menu-photo">
+<img alt="Baconator!" src="assets/pizza-four-cheese.jpg"/>
+</div>
+<div class="full-menu-body">
+<h3>Baconator!</h3>
+<p>Triple bacon.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R132.50</strong></div>
+<div><span>32cm Large</span><strong>R181.95</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Baconator!">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+</div>
+</section>
+<section class="complete-category-block" data-section-category="specialty">
+<div class="complete-category-heading">
+<div>
+<span class="category-eyebrow">Four Butler's favourites</span>
+<h2>Awesome Foursome</h2>
+<p>Special signature combinations from the official menu.</p>
+</div>
+</div>
+<div class="full-menu-grid sortable-menu-grid">
+<article class="full-menu-card menu-filter-item" data-category="specialty" data-name="dug's dynamite" data-price="132.50" data-search="dug's dynamite salami, mushroom, feta and garlic. ">
+<div class="full-menu-photo">
+<img alt="Dug's Dynamite" src="assets/pizza-groovy-greek.jpg"/>
+</div>
+<div class="full-menu-body">
+<h3>Dug's Dynamite</h3>
+<p>Salami, mushroom, feta and garlic.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R132.50</strong></div>
+<div><span>32cm Large</span><strong>R181.95</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Dug's+Dynamite">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="specialty" data-name="the hero" data-price="132.50" data-search="the hero thai chicken, mushroom, bacon and butleritos. ">
+<div class="full-menu-photo">
+<img alt="The Hero" src="assets/pizza-four-cheese.jpg"/>
+</div>
+<div class="full-menu-body">
+<h3>The Hero</h3>
+<p>Thai chicken, mushroom, bacon and Butleritos.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R132.50</strong></div>
+<div><span>32cm Large</span><strong>R181.95</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=The+Hero">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="specialty" data-name="funky fabb" data-price="132.50" data-search="funky fabb feta, avo guacamole, bacon and butleritos. ">
+<div class="full-menu-photo">
+<img alt="Funky Fabb" src="assets/pizza-bbq-chicken.jpg"/>
+</div>
+<div class="full-menu-body">
+<h3>Funky Fabb</h3>
+<p>Feta, avo guacamole, bacon and Butleritos.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R132.50</strong></div>
+<div><span>32cm Large</span><strong>R181.95</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Funky+Fabb">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="specialty" data-name="pops' princess" data-price="141.50" data-search="pops' princess basil pesto, tomato, feta, onion and butleritos. vegetarian">
+<div class="full-menu-photo">
+<img alt="Pops' Princess" src="assets/pizza-chicken-mayo.jpg"/>
+<div class="menu-diet-tags"><span class="menu-diet-tag vegetarian">Vegetarian</span></div>
+</div>
+<div class="full-menu-body">
+<h3>Pops' Princess</h3>
+<p>Basil pesto, tomato, feta, onion and Butleritos.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R141.50</strong></div>
+<div><span>32cm Large</span><strong>R191.50</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Pops'+Princess">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+</div>
+<div class="complete-category-heading sub-heading">
+<div>
+<span class="category-eyebrow">Kids' favourites</span>
+<h2>Lil' Butler's</h2>
+<p>Simple favourites built on a Margherita base.</p>
+</div>
+</div>
+<div class="full-menu-grid kids-grid sortable-menu-grid">
+<article class="full-menu-card menu-filter-item" data-category="specialty" data-name="cheezi margherita" data-price="101.95" data-search="cheezi margherita margherita with extra mozzarella. ">
+<div class="full-menu-photo">
+<img alt="Cheezi Margherita" src="assets/pizza-pepperoni.jpg"/>
+</div>
+<div class="full-menu-body">
+<h3>Cheezi Margherita</h3>
+<p>Margherita with extra mozzarella.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R101.95</strong></div>
+<div><span>32cm Large</span><strong>R150.50</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Cheezi+Margherita">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="specialty" data-name="hawaii" data-price="115.50" data-search="hawaii margherita with ham and pineapple. ">
+<div class="full-menu-photo">
+<img alt="Hawaii" src="assets/pizza-holy-moly.jpg"/>
+</div>
+<div class="full-menu-body">
+<h3>Hawaii</h3>
+<p>Margherita with ham and pineapple.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R115.50</strong></div>
+<div><span>32cm Large</span><strong>R164.50</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Hawaii">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="specialty" data-name="mr bacon" data-price="101.95" data-search="mr bacon margherita with bacon. ">
+<div class="full-menu-photo">
+<img alt="Mr Bacon" src="assets/pizza-groovy-greek.jpg"/>
+</div>
+<div class="full-menu-body">
+<h3>Mr Bacon</h3>
+<p>Margherita with bacon.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R101.95</strong></div>
+<div><span>32cm Large</span><strong>R150.50</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Mr+Bacon">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="specialty" data-name="lil' cheeze" data-price="101.95" data-search="lil' cheeze margherita with feta cheese. ">
+<div class="full-menu-photo">
+<img alt="Lil' Cheeze" src="assets/pizza-four-cheese.jpg"/>
+</div>
+<div class="full-menu-body">
+<h3>Lil' Cheeze</h3>
+<p>Margherita with feta cheese.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R101.95</strong></div>
+<div><span>32cm Large</span><strong>R150.50</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Lil'+Cheeze">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+<article class="full-menu-card menu-filter-item" data-category="specialty" data-name="hammie" data-price="101.95" data-search="hammie margherita with ham. ">
+<div class="full-menu-photo">
+<img alt="Hammie" src="assets/pizza-bbq-chicken.jpg"/>
+</div>
+<div class="full-menu-body">
+<h3>Hammie</h3>
+<p>Margherita with ham.</p>
+<div class="menu-size-prices">
+<div><span>26cm Medium</span><strong>R101.95</strong></div>
+<div><span>32cm Large</span><strong>R150.50</strong></div>
+</div>
+<a class="menu-order-button" href="order-now.html?item=Hammie">
+      Order Now <span>→</span>
+</a>
+</div>
+</article>
+</div>
+<div class="complete-category-heading sub-heading">
+<div>
+<span class="category-eyebrow">Save with a bundle</span>
+<h2>Deals</h2>
+<p>Quote the deal name when ordering. Deal conditions apply.</p>
+</div>
+</div>
+<div class="complete-deals-grid sortable-menu-grid">
+<article class="complete-deal-card green menu-filter-item" data-category="specialty" data-name="the big deal" data-price="303.50" data-search="the big deal 2 large pizzas with 3 toppings each.">
+<span class="deal-kicker">The</span>
+<h3>The Big Deal</h3>
+<p>2 large pizzas with 3 toppings each.</p>
+<strong>R303.50</strong>
+<a href="order-now.html">Order Deal →</a>
+</article>
+<article class="complete-deal-card yellow menu-filter-item" data-category="specialty" data-name="the double deal" data-price="233.50" data-search="the double deal 2 medium pizzas with 4 toppings each.">
+<span class="deal-kicker">The</span>
+<h3>The Double Deal</h3>
+<p>2 medium pizzas with 4 toppings each.</p>
+<strong>R233.50</strong>
+<a href="order-now.html">Order Deal →</a>
+</article>
+<article class="complete-deal-card red menu-filter-item" data-category="specialty" data-name="the triple deal" data-price="339.50" data-search="the triple deal 3 medium pizzas with 4 toppings each.">
+<span class="deal-kicker">The</span>
+<h3>The Triple Deal</h3>
+<p>3 medium pizzas with 4 toppings each.</p>
+<strong>R339.50</strong>
+<a href="order-now.html">Order Deal →</a>
+</article>
+<article class="complete-deal-card orange menu-filter-item" data-category="specialty" data-name="monday deal" data-price="9999.00" data-search="monday deal buy 2 pizzas and get the third one free. cheapest pizza is free; mondays only.">
+<span class="deal-kicker">The</span>
+<h3>Monday Deal</h3>
+<p>Buy 2 pizzas and get the third one free. Cheapest pizza is free; Mondays only.</p>
+<strong>Quote when ordering</strong>
+<a href="order-now.html">Order Deal →</a>
+</article>
+</div>
+</section>
+<section class="complete-category-block" data-section-category="sides">
+<div class="complete-category-heading">
+<div>
+<span class="category-eyebrow">Make it your own</span>
+<h2>Bases &amp; Extra Toppings</h2>
+<p>Base upgrades and individual topping prices for medium and large pizzas.</p>
+</div>
+</div>
+<h3 class="mini-category-title">Choose a Base</h3>
+<div class="compact-menu-grid sortable-menu-grid">
+<article class="compact-menu-card menu-filter-item" data-category="sides" data-name="pumpkin base" data-price="37.95" data-search="pumpkin base low carb evolution with only 5% carbs. low carb">
+<div aria-hidden="true" class="compact-menu-icon">🍕</div>
+<div class="compact-menu-copy">
+<span class="compact-badge">Low Carb</span>
+<h3>Pumpkin Base</h3>
+<p>Low Carb Evolution with only 5% carbs.</p>
+<div class="menu-size-prices compact">
+<div><span>26cm Medium</span><strong>R37.95</strong></div>
+<div><span>32cm Large</span><strong>—</strong></div>
+</div>
+</div>
+</article>
+<article class="compact-menu-card menu-filter-item" data-category="sides" data-name="zucchini base" data-price="37.95" data-search="zucchini base low carb evolution with only 5% carbs. low carb">
+<div aria-hidden="true" class="compact-menu-icon">🍕</div>
+<div class="compact-menu-copy">
+<span class="compact-badge">Low Carb</span>
+<h3>Zucchini Base</h3>
+<p>Low Carb Evolution with only 5% carbs.</p>
+<div class="menu-size-prices compact">
+<div><span>26cm Medium</span><strong>R37.95</strong></div>
+<div><span>32cm Large</span><strong>—</strong></div>
+</div>
+</div>
+</article>
+<article class="compact-menu-card menu-filter-item" data-category="sides" data-name="gluten free base" data-price="28.00" data-search="gluten free base wheat and gluten free. gluten free">
+<div aria-hidden="true" class="compact-menu-icon">🍕</div>
+<div class="compact-menu-copy">
+<span class="compact-badge">Gluten Free</span>
+<h3>Gluten Free Base</h3>
+<p>Wheat and gluten free.</p>
+<div class="menu-size-prices compact">
+<div><span>26cm Medium</span><strong>R28.00</strong></div>
+<div><span>32cm Large</span><strong>R39.75</strong></div>
+</div>
+</div>
+</article>
+<article class="compact-menu-card menu-filter-item" data-category="sides" data-name="lite pizza" data-price="0.00" data-search="lite pizza any pizza with a thin base and less mozzarella. no extra charge">
+<div aria-hidden="true" class="compact-menu-icon">🍕</div>
+<div class="compact-menu-copy">
+<span class="compact-badge">No extra charge</span>
+<h3>Lite Pizza</h3>
+<p>Any pizza with a thin base and less mozzarella.</p>
+<div class="menu-size-prices compact">
+<div><span>26cm Medium</span><strong>R0.00</strong></div>
+<div><span>32cm Large</span><strong>R0.00</strong></div>
+</div>
+</div>
+</article>
+<article class="compact-menu-card menu-filter-item" data-category="sides" data-name="thin base" data-price="0.00" data-search="thin base 33% fewer carbs than the standard pizza base. no extra charge">
+<div aria-hidden="true" class="compact-menu-icon">🍕</div>
+<div class="compact-menu-copy">
+<span class="compact-badge">No extra charge</span>
+<h3>Thin Base</h3>
+<p>33% fewer carbs than the standard pizza base.</p>
+<div class="menu-size-prices compact">
+<div><span>26cm Medium</span><strong>R0.00</strong></div>
+<div><span>32cm Large</span><strong>R0.00</strong></div>
+</div>
+</div>
+</article>
+<article class="compact-menu-card menu-filter-item" data-category="sides" data-name="thick base" data-price="0.00" data-search="thick base thicker than the standard base. no extra charge">
+<div aria-hidden="true" class="compact-menu-icon">🍕</div>
+<div class="compact-menu-copy">
+<span class="compact-badge">No extra charge</span>
+<h3>Thick Base</h3>
+<p>Thicker than the standard base.</p>
+<div class="menu-size-prices compact">
+<div><span>26cm Medium</span><strong>R0.00</strong></div>
+<div><span>32cm Large</span><strong>R0.00</strong></div>
+</div>
+</div>
+</article>
+</div>
+<h3 class="mini-category-title">Extra Toppings</h3>
+<div class="compact-menu-grid toppings-grid sortable-menu-grid">
+<article class="compact-menu-card menu-filter-item" data-category="sides" data-name="fresh veg toppings" data-price="13.50" data-search="fresh veg toppings pineapple, onion, garlic, spinach, banana, green pepper or tomato. per ingredient">
+<div aria-hidden="true" class="compact-menu-icon">➕</div>
+<div class="compact-menu-copy">
+<span class="compact-badge">Per ingredient</span>
+<h3>Fresh Veg Toppings</h3>
+<p>Pineapple, onion, garlic, spinach, banana, green pepper or tomato.</p>
+<div class="menu-size-prices compact">
+<div><span>26cm Medium</span><strong>R13.50</strong></div>
+<div><span>32cm Large</span><strong>R19.50</strong></div>
+</div>
+</div>
+</article>
+<article class="compact-menu-card menu-filter-item" data-category="sides" data-name="premium veg toppings" data-price="19.50" data-search="premium veg toppings avo guacamole, olives, jalapeño chillies, mushrooms, red onion or sriracha mayo. per ingredient">
+<div aria-hidden="true" class="compact-menu-icon">➕</div>
+<div class="compact-menu-copy">
+<span class="compact-badge">Per ingredient</span>
+<h3>Premium Veg Toppings</h3>
+<p>Avo guacamole, olives, jalapeño chillies, mushrooms, red onion or Sriracha mayo.</p>
+<div class="menu-size-prices compact">
+<div><span>26cm Medium</span><strong>R19.50</strong></div>
+<div><span>32cm Large</span><strong>R24.20</strong></div>
+</div>
+</div>
+</article>
+<article class="compact-menu-card menu-filter-item" data-category="sides" data-name="meat &amp; sauce toppings" data-price="24.20" data-search="meat &amp; sauce toppings butleritos, bacon, ham, salami, pepperoni, thai chicken, anchovies, basil pesto, red pesto or butleritos chutney. per ingredient">
+<div aria-hidden="true" class="compact-menu-icon">➕</div>
+<div class="compact-menu-copy">
+<span class="compact-badge">Per ingredient</span>
+<h3>Meat &amp; Sauce Toppings</h3>
+<p>Butleritos, bacon, ham, salami, pepperoni, Thai chicken, anchovies, basil pesto, red pesto or Butleritos chutney.</p>
+<div class="menu-size-prices compact">
+<div><span>26cm Medium</span><strong>R24.20</strong></div>
+<div><span>32cm Large</span><strong>R34.50</strong></div>
+</div>
+</div>
+</article>
+<article class="compact-menu-card menu-filter-item" data-category="sides" data-name="cheese toppings" data-price="24.20" data-search="cheese toppings extra mozzarella, vegan mozzarella, blue cheese or feta cheese. per ingredient">
+<div aria-hidden="true" class="compact-menu-icon">➕</div>
+<div class="compact-menu-copy">
+<span class="compact-badge">Per ingredient</span>
+<h3>Cheese Toppings</h3>
+<p>Extra mozzarella, vegan mozzarella, blue cheese or feta cheese.</p>
+<div class="menu-size-prices compact">
+<div><span>26cm Medium</span><strong>R24.20</strong></div>
+<div><span>32cm Large</span><strong>R34.50</strong></div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section class="complete-category-block" data-section-category="drinks">
+<div class="complete-category-heading">
+<div>
+<span class="category-eyebrow">Cold drinks</span>
+<h2>Drinks</h2>
+<p>Soft drinks currently listed on the Butler's menu.</p>
+</div>
+</div>
+<div class="compact-menu-grid sortable-menu-grid">
+<article class="compact-menu-card menu-filter-item" data-category="drinks" data-name="coke 300ml" data-price="23.50" data-search="coke 300ml classic coca-cola. ">
+<div aria-hidden="true" class="compact-menu-icon">🥤</div>
+<div class="compact-menu-copy">
+<h3>Coke 300ml</h3>
+<p>Classic Coca-Cola.</p>
+<div class="single-menu-price">R23.50</div>
+</div>
+</article>
+<article class="compact-menu-card menu-filter-item" data-category="drinks" data-name="coke zero 300ml" data-price="23.50" data-search="coke zero 300ml zero sugar coca-cola. ">
+<div aria-hidden="true" class="compact-menu-icon">🥤</div>
+<div class="compact-menu-copy">
+<h3>Coke Zero 300ml</h3>
+<p>Zero sugar Coca-Cola.</p>
+<div class="single-menu-price">R23.50</div>
+</div>
+</article>
+<article class="compact-menu-card menu-filter-item" data-category="drinks" data-name="coke 1.5l" data-price="36.00" data-search="coke 1.5l large sharing bottle. ">
+<div aria-hidden="true" class="compact-menu-icon">🥤</div>
+<div class="compact-menu-copy">
+<h3>Coke 1.5L</h3>
+<p>Large sharing bottle.</p>
+<div class="single-menu-price">R36.00</div>
+</div>
+</article>
+</div>
+</section>
+<section class="complete-category-block" data-section-category="desserts">
+<div class="complete-category-heading">
+<div>
+<span class="category-eyebrow">Something sweet</span>
+<h2>Treats</h2>
+<p>Ola Magnum ice creams from the current menu.</p>
+</div>
+</div>
+<div class="compact-menu-grid sortable-menu-grid">
+<article class="compact-menu-card menu-filter-item" data-category="desserts" data-name="ola magnum 90ml" data-price="42.95" data-search="ola magnum 90ml full-size magnum ice cream. ">
+<div aria-hidden="true" class="compact-menu-icon">🍦</div>
+<div class="compact-menu-copy">
+<h3>Ola Magnum 90ml</h3>
+<p>Full-size Magnum ice cream.</p>
+<div class="single-menu-price">R42.95</div>
+</div>
+</article>
+<article class="compact-menu-card menu-filter-item" data-category="desserts" data-name="ola mini magnum 55ml" data-price="29.95" data-search="ola mini magnum 55ml mini magnum ice cream. ">
+<div aria-hidden="true" class="compact-menu-icon">🍦</div>
+<div class="compact-menu-copy">
+<h3>Ola Mini Magnum 55ml</h3>
+<p>Mini Magnum ice cream.</p>
+<div class="single-menu-price">R29.95</div>
+</div>
+</article>
+</div>
+</section>
+<p class="official-menu-note">
+    Menu prices can change. Confirm the final total with Butler's when ordering.
+  </p>
 </section>
 <section class="feature-band light menu-feature-row">
 <article>
@@ -452,13 +1002,13 @@
 <h3>
       Contact Us
      </h3>
-<p>
+<p class="footer-contact-line"><img alt="" aria-hidden="true" class="inline-contact-icon" src="assets/phone.png"/>
       📞 021 686 3333
      </p>
-<p>
+<p class="footer-contact-line"><img alt="" aria-hidden="true" class="inline-contact-icon" src="assets/email.png"/>
       ✉ info@butlers.co.za
      </p>
-<p>
+<p class="footer-contact-line"><img alt="" aria-hidden="true" class="inline-contact-icon" src="assets/live-chat.png"/>
       🟢
       <b>
        Live Chat
@@ -471,7 +1021,7 @@
 <h3>
       Follow Us
      </h3>
-<div class="socials"><a aria-label="Facebook" class="social-link facebook" href="#"><img alt="Facebook" src="assets/facebook.png"/></a><a aria-label="Instagram" class="social-link instagram" href="#"><img alt="Instagram" src="assets/instagram.png"/></a><a aria-label="X" class="social-link x" href="#"><img alt="X" src="assets/x.png"/></a></div>
+<div class="socials"><a aria-label="Facebook" href="https://www.facebook.com/butlerspizzaOG" rel="noopener noreferrer" target="_blank"><img alt="Facebook" src="assets/facebook.png"/></a><a aria-label="Instagram" href="https://www.instagram.com/butlerspizzaog?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" rel="noopener noreferrer" target="_blank"><img alt="Instagram" src="assets/instagram.png"/></a><a aria-label="X" href="https://x.com/ButlersPizzaSA?s=20" rel="noopener noreferrer" target="_blank"><img alt="X" src="assets/x.png"/></a></div>
 <p>
 <b>
        Join our pizza family
@@ -504,5 +1054,5 @@
     </span>
 </div>
 </footer>
-</body>
+<script src="script.js"></script></body>
 </html>
