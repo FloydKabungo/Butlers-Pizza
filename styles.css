@@ -1031,17 +1031,31 @@ display:flex;align-items:center;gap:12px;
 }
 
 .floating-order {
-    width:116px;
-    height:116px;
-    background:var(--red);
-    border:5px solid #ffb9c4;
-    border-radius:50%;
-    display:grid;
-    place-items:center;
-    text-align:center;
-    font:25px/.85 var(--display);
-    text-transform:uppercase;
-    box-shadow:var(--shadow)
+    width: 116px;
+    height: 116px;
+    padding: 5px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+
+    background: #ef123d;
+    border: 4px solid #ffb9c4;
+    border-radius: 50%;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease;
+}
+
+.floating-order img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+    transform: scale(1.16);
+}
+
+.floating-order:hover {
+    transform: translateY(-4px) scale(1.05);
 }
 
 .legal {
@@ -1243,7 +1257,8 @@ display:flex;align-items:center;gap:12px;
     .floating-order {
         width:90px;
         height:90px;
-        font-size:20px
+        font-size:20px;
+        display: flex;
     }
 }
 
@@ -8455,5 +8470,257 @@ body.menu-page .site-footer {
 
     .order-pro-checkout-grid-delivery-only {
         grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   BRANCH LOCATION CARDS — ILLUSTRATED MOCKUP REDESIGN
+   ========================================================= */
+
+.locations-section {
+    max-width: 1320px;
+    padding-top: 44px;
+    padding-bottom: 52px;
+}
+
+.locations-section .section-head {
+    margin-bottom: 28px;
+}
+
+.locations-section .section-title {
+    font-size: clamp(38px, 4vw, 58px);
+}
+
+.locations-subtitle {
+    max-width: 620px;
+    margin-top: 12px;
+    color: #333;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.delivery-map-layout {
+    grid-template-columns: minmax(0, 1.45fr) minmax(340px, .88fr);
+    gap: 30px;
+    align-items: stretch;
+}
+
+.locations-section .locations {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.locations-section .loc-card {
+    min-height: 322px;
+    padding: 0 14px 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e7e0d5;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 14px 28px rgba(0,0,0,.12);
+    transition: transform .22s ease, box-shadow .22s ease, outline-color .22s ease;
+}
+
+.locations-section .loc-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 36px rgba(0,0,0,.17);
+}
+
+.locations-section .loc-card::before {
+    display: none;
+}
+
+.branch-card-visual {
+    height: 154px;
+    margin: 0 -14px 9px;
+    overflow: hidden;
+    border-bottom: 1px solid #eee6d9;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,211,10,.18), transparent 30%),
+        #eef9fd;
+}
+
+.branch-card-visual img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.locations-section .loc-card h3 {
+    margin: 4px 0 2px;
+    font: 25px/.95 var(--display);
+    text-transform: uppercase;
+}
+
+.locations-section .loc-card > p {
+    margin: 4px 0 10px;
+    color: #15952e;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.locations-section .delivery-only {
+    margin: 0 auto 13px;
+    padding: 6px 12px;
+    background: #fff0ad;
+    border: 1px solid rgba(0,0,0,.07);
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.locations-section .loc-actions {
+    margin-top: auto;
+    gap: 9px;
+}
+
+.locations-section .loc-actions a {
+    min-height: 38px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(0,0,0,.08);
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: 900;
+    box-shadow: inset 0 -3px rgba(0,0,0,.08);
+}
+
+.locations-section .loc-actions a:first-child {
+    background: #f0f0f0;
+}
+
+.locations-section .loc-actions a:last-child {
+    background: var(--red);
+    color: #fff;
+}
+
+.locations-section .loc-actions a:hover {
+    transform: translateY(-2px);
+}
+
+.delivery-panel {
+    min-height: 662px;
+    border-radius: 17px;
+    border-width: 4px;
+    box-shadow: 0 18px 34px rgba(0,0,0,.18);
+}
+
+.delivery-panel h3 {
+    font-size: clamp(42px, 4vw, 62px);
+}
+
+.delivery-panel p {
+    font-size: 15px;
+}
+
+.branch-search {
+    max-width: 470px;
+}
+
+.delivery-route {
+    margin-top: 22px;
+}
+
+.delivery-route img {
+    width: 145px;
+}
+
+.branch-tags span {
+    padding: 8px 13px;
+}
+
+@media (max-width: 1050px) {
+    .delivery-map-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .delivery-panel {
+        min-height: 480px;
+    }
+}
+
+@media (max-width: 760px) {
+    .locations-section .locations {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .locations-section {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .locations-section .locations {
+        grid-template-columns: 1fr;
+    }
+
+    .branch-card-visual {
+        height: 176px;
+    }
+
+    .delivery-panel {
+        min-height: 520px;
+    }
+}
+
+
+/* =========================================================
+   MENU CATEGORY PNG ICONS
+   Replaces the previous inline SVG/emoji-style icons.
+   ========================================================= */
+
+.menu-tabs .tab-icon {
+    width: 64px;
+    height: 64px;
+    padding: 0;
+    overflow: hidden;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: 0 5px 12px rgba(0,0,0,.22);
+}
+
+.menu-tabs .menu-category-icon {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+    pointer-events: none;
+    user-select: none;
+}
+
+.menu-tabs .tab-item {
+    min-width: 82px;
+}
+
+.menu-tabs .tab-item:hover .tab-icon,
+.menu-tabs .tab-item:focus-visible .tab-icon {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 8px 18px rgba(0,0,0,.28);
+}
+
+.menu-tabs .tab-item.active .tab-icon {
+    outline: 3px solid var(--yellow);
+    outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+    .menu-tabs .tab-icon {
+        width: 58px;
+        height: 58px;
+    }
+}
+
+@media (max-width: 560px) {
+    .menu-tabs .tab-icon {
+        width: 54px;
+        height: 54px;
     }
 }
