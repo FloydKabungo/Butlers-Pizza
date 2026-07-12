@@ -358,6 +358,230 @@ function initMenuPage() {
     applyFilters();
   });
 
+
+  /* Pizza customizer and persistent cart */
+  const customizer = document.getElementById('pizzaCustomizer');
+  const customizerForm = document.getElementById('pizzaCustomizerForm');
+  const customizerClose = document.getElementById('pizzaCustomizerClose');
+  const customizerName = document.getElementById('pizzaCustomizerName');
+  const customizerDescription = document.getElementById('pizzaCustomizerDescription');
+  const customizerImage = document.getElementById('pizzaCustomizerImage');
+  const sizeOptions = document.getElementById('pizzaSizeOptions');
+  const baseOptions = document.getElementById('pizzaBaseOptions');
+  const toppingOptions = document.getElementById('pizzaToppingOptions');
+  const customizerTotal = document.getElementById('pizzaCustomizerTotal');
+  const cartToast = document.getElementById('menuCartToast');
+
+  const bases = [
+    { id: 'standard', name: 'Standard Base', medium: 0, large: 0 },
+    { id: 'pumpkin', name: 'Pumpkin Base', medium: 37.95, large: null },
+    { id: 'zucchini', name: 'Zucchini Base', medium: 37.95, large: null },
+    { id: 'gluten-free', name: 'Gluten Free Base', medium: 28, large: 39.75 },
+    { id: 'lite', name: 'Lite Pizza', medium: 0, large: 0 },
+    { id: 'thin', name: 'Thin Base', medium: 0, large: 0 },
+    { id: 'thick', name: 'Thick Base', medium: 0, large: 0 }
+  ];
+
+  const toppings = [
+    { id: 'pineapple', name: 'Pineapple', group: 'Fresh veg', medium: 13.5, large: 19.5 },
+    { id: 'onion', name: 'Onion', group: 'Fresh veg', medium: 13.5, large: 19.5 },
+    { id: 'garlic', name: 'Garlic', group: 'Fresh veg', medium: 13.5, large: 19.5 },
+    { id: 'spinach', name: 'Spinach', group: 'Fresh veg', medium: 13.5, large: 19.5 },
+    { id: 'green-pepper', name: 'Green Pepper', group: 'Fresh veg', medium: 13.5, large: 19.5 },
+    { id: 'tomato', name: 'Tomato', group: 'Fresh veg', medium: 13.5, large: 19.5 },
+    { id: 'mushrooms', name: 'Mushrooms', group: 'Premium veg', medium: 19.5, large: 24.2 },
+    { id: 'olives', name: 'Olives', group: 'Premium veg', medium: 19.5, large: 24.2 },
+    { id: 'jalapeno', name: 'Jalapeño Chillies', group: 'Premium veg', medium: 19.5, large: 24.2 },
+    { id: 'avo', name: 'Avo Guacamole', group: 'Premium veg', medium: 19.5, large: 24.2 },
+    { id: 'bacon', name: 'Bacon', group: 'Meat & sauce', medium: 24.2, large: 34.5 },
+    { id: 'ham', name: 'Ham', group: 'Meat & sauce', medium: 24.2, large: 34.5 },
+    { id: 'salami', name: 'Salami', group: 'Meat & sauce', medium: 24.2, large: 34.5 },
+    { id: 'pepperoni', name: 'Pepperoni', group: 'Meat & sauce', medium: 24.2, large: 34.5 },
+    { id: 'thai-chicken', name: 'Thai Chicken', group: 'Meat & sauce', medium: 24.2, large: 34.5 },
+    { id: 'extra-mozzarella', name: 'Extra Mozzarella', group: 'Cheese', medium: 24.2, large: 34.5 },
+    { id: 'vegan-mozzarella', name: 'Vegan Mozzarella', group: 'Cheese', medium: 24.2, large: 34.5 },
+    { id: 'feta', name: 'Feta Cheese', group: 'Cheese', medium: 24.2, large: 34.5 }
+  ];
+
+  let selectedPizzaCard = null;
+
+  function moneyMenu(value) {
+    return `R${Number(value).toFixed(2)}`;
+  }
+
+  function readPizzaCard(card) {
+    const prices = [...card.querySelectorAll('.menu-size-prices > div')].map((row) => {
+      const label = row.querySelector('span')?.textContent.trim() || '';
+      const priceText = row.querySelector('strong')?.textContent || '';
+      const price = Number(priceText.replace(/[^\d.]/g, ''));
+      return { label, price };
+    });
+
+    return {
+      name: card.querySelector('h3')?.textContent.trim() || 'Pizza',
+      description: card.querySelector('.full-menu-body > p')?.textContent.trim() || '',
+      image: card.querySelector('.full-menu-photo img')?.getAttribute('src') || 'assets/pizza-hms.jpg',
+      medium: prices[0]?.price || Number(card.dataset.price || 0),
+      large: prices[1]?.price || prices[0]?.price || Number(card.dataset.price || 0)
+    };
+  }
+
+  function selectedSize() {
+    return customizerForm?.querySelector('input[name="pizza-size"]:checked')?.value || 'medium';
+  }
+
+  function renderBaseOptions() {
+    if (!baseOptions) return;
+    const size = selectedSize();
+
+    baseOptions.innerHTML = bases
+      .filter((base) => base[size] !== null)
+      .map((base, index) => `
+        <label class="pizza-choice-card">
+          <input type="radio" name="pizza-base" value="${base.id}" ${index === 0 ? 'checked' : ''}>
+          <span>
+            <strong>${base.name}</strong>
+            <small>${base[size] === 0 ? 'No extra charge' : `+ ${moneyMenu(base[size])}`}</small>
+          </span>
+        </label>
+      `)
+      .join('');
+  }
+
+  function renderToppingOptions() {
+    if (!toppingOptions) return;
+    const size = selectedSize();
+
+    toppingOptions.innerHTML = toppings.map((topping) => `
+      <label class="pizza-topping-card">
+        <input type="checkbox" name="pizza-topping" value="${topping.id}">
+        <span>
+          <strong>${topping.name}</strong>
+          <small>${topping.group} · + ${moneyMenu(topping[size])}</small>
+        </span>
+      </label>
+    `).join('');
+  }
+
+  function calculateCustomizerTotal() {
+    if (!selectedPizzaCard || !customizerTotal || !customizerForm) return;
+    const pizza = readPizzaCard(selectedPizzaCard);
+    const size = selectedSize();
+    const chosenBaseId = customizerForm.querySelector('input[name="pizza-base"]:checked')?.value || 'standard';
+    const chosenBase = bases.find((base) => base.id === chosenBaseId);
+    const chosenToppingIds = [...customizerForm.querySelectorAll('input[name="pizza-topping"]:checked')]
+      .map((input) => input.value);
+
+    const toppingTotal = chosenToppingIds.reduce((sum, id) => {
+      const topping = toppings.find((item) => item.id === id);
+      return sum + (topping?.[size] || 0);
+    }, 0);
+
+    customizerTotal.textContent = moneyMenu(
+      pizza[size] + (chosenBase?.[size] || 0) + toppingTotal
+    );
+  }
+
+  function openCustomizer(card) {
+    selectedPizzaCard = card;
+    const pizza = readPizzaCard(card);
+
+    customizerName.textContent = pizza.name;
+    customizerDescription.textContent = pizza.description;
+    customizerImage.src = pizza.image;
+    customizerImage.alt = pizza.name;
+
+    sizeOptions.innerHTML = `
+      <label class="pizza-choice-card">
+        <input type="radio" name="pizza-size" value="medium" checked>
+        <span><strong>26cm Medium</strong><small>${moneyMenu(pizza.medium)}</small></span>
+      </label>
+      <label class="pizza-choice-card">
+        <input type="radio" name="pizza-size" value="large">
+        <span><strong>32cm Large</strong><small>${moneyMenu(pizza.large)}</small></span>
+      </label>
+    `;
+
+    renderBaseOptions();
+    renderToppingOptions();
+    calculateCustomizerTotal();
+    customizer.showModal();
+  }
+
+  document.querySelectorAll('.pizza-customize-button').forEach((button) => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.full-menu-card');
+      if (card) openCustomizer(card);
+    });
+  });
+
+  customizerClose?.addEventListener('click', () => customizer?.close());
+
+  customizer?.addEventListener('click', (event) => {
+    if (event.target === customizer) customizer.close();
+  });
+
+  customizerForm?.addEventListener('change', (event) => {
+    if (event.target.name === 'pizza-size') {
+      renderBaseOptions();
+      renderToppingOptions();
+    }
+    calculateCustomizerTotal();
+  });
+
+  customizerForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!selectedPizzaCard) return;
+
+    const pizza = readPizzaCard(selectedPizzaCard);
+    const size = selectedSize();
+    const baseId = customizerForm.querySelector('input[name="pizza-base"]:checked')?.value || 'standard';
+    const selectedBase = bases.find((base) => base.id === baseId) || bases[0];
+    const selectedToppings = [...customizerForm.querySelectorAll('input[name="pizza-topping"]:checked')]
+      .map((input) => toppings.find((item) => item.id === input.value))
+      .filter(Boolean);
+
+    const unitPrice =
+      pizza[size] +
+      (selectedBase[size] || 0) +
+      selectedToppings.reduce((sum, topping) => sum + topping[size], 0);
+
+    const configurationKey = [
+      pizza.name,
+      size,
+      selectedBase.id,
+      ...selectedToppings.map((item) => item.id).sort()
+    ].join('|');
+
+    const cart = JSON.parse(localStorage.getItem('butlersCart') || '[]');
+    const existing = cart.find((item) => item.configurationKey === configurationKey);
+
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push({
+        id: `pizza-${Date.now()}`,
+        configurationKey,
+        name: pizza.name,
+        subtitle: `${size === 'medium' ? '26cm Medium' : '32cm Large'} · ${selectedBase.name}${
+          selectedToppings.length ? ` · ${selectedToppings.map((item) => item.name).join(', ')}` : ''
+        }`,
+        price: unitPrice,
+        image: pizza.image.replace(/^assets\//, ''),
+        quantity: 1
+      });
+    }
+
+    localStorage.setItem('butlersCart', JSON.stringify(cart));
+    customizer.close();
+
+    if (cartToast) {
+      cartToast.innerHTML = `<strong>${pizza.name}</strong> added to your cart. <a href="order-now.html">View cart →</a>`;
+      cartToast.classList.add('is-visible');
+      window.setTimeout(() => cartToast.classList.remove('is-visible'), 4200);
+    }
+  });
+
   updateTabState(activeFilter);
   applyFilters();
 }
@@ -417,13 +641,17 @@ function initOrderPage() {
   const checkoutForm = document.getElementById('orderCheckoutForm');
   const formStatus = document.getElementById('orderFormStatus');
 
-  const cart = [];
+  const cart = JSON.parse(localStorage.getItem('butlersCart') || '[]');
+
+  function saveCart() {
+    localStorage.setItem('butlersCart', JSON.stringify(cart));
+  }
 
   const params = new URLSearchParams(window.location.search);
   const selectedName = params.get('item');
   const selectedPizza = selectedName ? pizzaData[selectedName] : null;
 
-  if (selectedPizza && selectedName) {
+  if (selectedPizza && selectedName && !cart.some((item) => item.name === selectedName)) {
     cart.push({
       id: `pizza-${selectedName.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
       name: selectedName,
@@ -432,6 +660,7 @@ function initOrderPage() {
       image: selectedPizza.image,
       quantity: 1
     });
+    saveCart();
   }
 
   function money(value) {
@@ -544,6 +773,7 @@ function initOrderPage() {
       cart.push({ ...item, quantity: 1 });
     }
 
+    saveCart();
     renderCart();
   }
 
@@ -578,6 +808,7 @@ function initOrderPage() {
       cart.splice(cart.indexOf(item), 1);
     }
 
+    saveCart();
     renderCart();
   });
 
@@ -631,7 +862,7 @@ function initOrderPage() {
 
     if (formStatus) {
       formStatus.textContent =
-        'Your delivery details are ready. Connect your payment gateway to complete live checkout.';
+        "Your delivery details are ready. Online payment is not connected yet—please contact Butler's Pizza to complete the order.";
     }
   });
 
