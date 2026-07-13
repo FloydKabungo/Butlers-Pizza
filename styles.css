@@ -11824,3 +11824,625 @@ body.menu-page .site-footer {
         width: 174px !important;
     }
 }
+
+/* =========================================================
+   FINAL MOBILE CORRECTION — identified screenshot issues
+   Desktop/tablet layouts above 760px remain untouched.
+   ========================================================= */
+@media (max-width: 760px) {
+    /* Keep decorative section arrows from colliding with mobile headings. */
+    .section-title::before {
+        display: none !important;
+        content: none !important;
+    }
+
+    .section-title::after {
+        left: 4px !important;
+        bottom: -7px !important;
+        width: 78px !important;
+        height: 6px !important;
+    }
+
+    /* ---------------- HOME HERO ---------------- */
+    .home-page .home-classic-hero {
+        min-height: 660px !important;
+        height: 660px !important;
+        overflow: hidden !important;
+    }
+
+    .home-page .home-classic-copy {
+        position: relative !important;
+        z-index: 20 !important;
+        width: 100% !important;
+        padding: 25px 14px 0 !important;
+    }
+
+    .home-page .home-classic-description {
+        max-width: 285px !important;
+        margin-bottom: 14px !important;
+        font-size: 11px !important;
+        line-height: 1.45 !important;
+    }
+
+    .home-page .home-classic-actions {
+        width: min(310px, 88%) !important;
+    }
+
+    .home-page .home-classic-pizza {
+        top: auto !important;
+        right: -145px !important;
+        bottom: 98px !important;
+        width: 445px !important;
+        height: auto !important;
+        max-width: none !important;
+        opacity: 1 !important;
+    }
+
+    .home-page .home-classic-car {
+        z-index: 16 !important;
+        left: 22px !important;
+        right: auto !important;
+        bottom: 106px !important;
+        width: 160px !important;
+        height: auto !important;
+        max-width: none !important;
+    }
+
+    .home-page .home-classic-chat {
+        z-index: 17 !important;
+        top: 350px !important;
+        left: 18px !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: 118px !important;
+        min-height: 88px !important;
+        padding: 12px 10px 14px !important;
+        border-width: 3px !important;
+        font-size: 18px !important;
+        transform: rotate(-2deg) !important;
+    }
+
+    .home-page .home-classic-chat::after {
+        left: 56px !important;
+        bottom: -22px !important;
+        width: 28px !important;
+        height: 28px !important;
+        border-left-width: 3px !important;
+        border-bottom-width: 3px !important;
+    }
+
+    .home-page .home-classic-badges {
+        z-index: 30 !important;
+        left: 10px !important;
+        right: 10px !important;
+        bottom: 16px !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        grid-auto-rows: 76px !important;
+        gap: 7px !important;
+    }
+
+    .home-page .home-classic-badge {
+        height: 76px !important;
+        min-height: 76px !important;
+        max-height: 76px !important;
+        padding: 6px 3px !important;
+        grid-template-rows: 34px auto !important;
+        background: rgba(255,253,244,.97) !important;
+        box-shadow: 0 5px 12px rgba(0,0,0,.12) !important;
+    }
+
+    .home-page .home-classic-badge-icon {
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    .home-page .home-classic-badge-icon svg {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    .home-page .home-classic-badge-copy strong {
+        font-size: 9px !important;
+        line-height: 1 !important;
+    }
+
+    /* ---------------- POPULAR PIZZAS / DEALS ---------------- */
+    .home-page .popular-section .section-head,
+    .home-page .deals-section .section-head {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) auto !important;
+        gap: 10px !important;
+        align-items: end !important;
+    }
+
+    .home-page .popular-section .section-title,
+    .home-page .deals-section .section-title {
+        min-width: 0 !important;
+        margin: 0 !important;
+        font-size: clamp(35px, 10.3vw, 43px) !important;
+        line-height: .83 !important;
+    }
+
+    .home-page .popular-section .section-head .btn {
+        width: 112px !important;
+        min-width: 112px !important;
+        min-height: 43px !important;
+        margin: 0 0 2px !important;
+        padding: 7px 8px !important;
+        gap: 5px !important;
+        font-size: 12px !important;
+        line-height: 1 !important;
+        white-space: normal !important;
+        text-align: left !important;
+    }
+
+    .home-page .popular-section .section-head .circle-icon {
+        width: 20px !important;
+        height: 20px !important;
+        flex: 0 0 20px !important;
+    }
+
+    .home-page .pizza-card {
+        min-width: 0 !important;
+    }
+
+    .home-page .pizza-body {
+        display: flex !important;
+        min-height: 143px !important;
+        flex-direction: column !important;
+    }
+
+    .home-page .pizza-body h3 {
+        min-height: 32px !important;
+        margin-bottom: 7px !important;
+        font-size: 17px !important;
+        line-height: .92 !important;
+    }
+
+    .home-page .pizza-info {
+        grid-template-columns: minmax(0, 1fr) auto !important;
+        gap: 5px !important;
+        align-items: end !important;
+    }
+
+    .home-page .pizza-info p {
+        min-height: 35px !important;
+        font-size: 9px !important;
+        line-height: 1.3 !important;
+    }
+
+    .home-page .price {
+        font-size: 16px !important;
+        line-height: .9 !important;
+    }
+
+    .home-page .card-row {
+        margin-top: auto !important;
+    }
+
+    /* ---------------- CONTACT CONTENT ---------------- */
+    .contact-page .contact-section {
+        padding: 25px 10px 31px !important;
+    }
+
+    .contact-page .contact-panel-title {
+        width: fit-content !important;
+        max-width: calc(100vw - 24px) !important;
+        margin: 0 0 18px !important;
+        font-size: clamp(28px, 8.6vw, 34px) !important;
+        line-height: .9 !important;
+        white-space: normal !important;
+    }
+
+    .contact-page .contact-info-panel {
+        gap: 10px !important;
+    }
+
+    .contact-page .contact-card {
+        min-height: 104px !important;
+        padding: 10px 8px !important;
+        grid-template-columns: 36px minmax(0, 1fr) !important;
+        gap: 7px !important;
+    }
+
+    .contact-page .contact-card .round,
+    .contact-page .contact-icon-img {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    .contact-page .contact-card h3 {
+        font-size: 13px !important;
+    }
+
+    .contact-page .contact-card strong {
+        font-size: 10px !important;
+        line-height: 1.2 !important;
+        word-break: normal !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .contact-page .contact-card p {
+        font-size: 8px !important;
+        line-height: 1.25 !important;
+    }
+
+    .contact-page .contact-form-panel {
+        margin-top: 28px !important;
+    }
+
+    .contact-page .contact-form-panel .contact-panel-title {
+        margin-bottom: 18px !important;
+    }
+
+    .contact-page .form-grid {
+        gap: 9px !important;
+    }
+
+    .contact-page .form-grid input,
+    .contact-page .form-grid textarea {
+        font-size: 12px !important;
+    }
+
+    .contact-page .form-grid textarea {
+        height: 122px !important;
+    }
+
+    /* ---------------- RECRUITMENT ---------------- */
+    .contact-page .recruitment-banner {
+        min-height: 0 !important;
+        height: auto !important;
+        overflow: hidden !important;
+    }
+
+    .contact-page .recruitment-inner {
+        position: relative !important;
+        width: calc(100% - 24px) !important;
+        min-height: 0 !important;
+        height: auto !important;
+        padding: 27px 0 19px !important;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+    }
+
+    .contact-page .recruitment-copy {
+        position: static !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .contact-page .recruitment-kicker {
+        margin: 0 !important;
+        font-size: clamp(22px, 7vw, 28px) !important;
+        line-height: .9 !important;
+    }
+
+    .contact-page .recruitment-copy h2 {
+        margin: 0 0 20px !important;
+        font-size: clamp(55px, 17vw, 72px) !important;
+        line-height: .72 !important;
+    }
+
+    .contact-page .recruitment-details {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 15px !important;
+        align-items: start !important;
+    }
+
+    .contact-page .recruitment-details h3 {
+        margin: 0 0 8px !important;
+        font-size: 15px !important;
+        line-height: .95 !important;
+    }
+
+    .contact-page .recruitment-details p,
+    .contact-page .recruitment-family p {
+        margin: 0 0 8px !important;
+        font-size: 9px !important;
+        line-height: 1.35 !important;
+    }
+
+    .contact-page .recruitment-actions {
+        position: static !important;
+        width: 100% !important;
+        margin: 15px 0 0 !important;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 142px !important;
+        gap: 10px !important;
+        align-items: center !important;
+    }
+
+    .contact-page .recruitment-email {
+        min-width: 0 !important;
+        font-size: 11px !important;
+        line-height: 1.2 !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .contact-page .recruitment-email .inline-contact-icon {
+        width: 31px !important;
+        height: 31px !important;
+    }
+
+    .contact-page .recruitment-apply {
+        width: 142px !important;
+        min-width: 142px !important;
+        min-height: 42px !important;
+        padding: 8px 9px !important;
+        font-size: 14px !important;
+    }
+
+    .contact-page .recruitment-visual {
+        position: static !important;
+        z-index: 2 !important;
+        width: 175px !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: -9px -5px 0 auto !important;
+        justify-self: end !important;
+        display: block !important;
+        pointer-events: none !important;
+    }
+
+    .contact-page .recruitment-visual::after {
+        display: none !important;
+        content: none !important;
+    }
+
+    .contact-page .recruitment-visual img {
+        display: block !important;
+        width: 175px !important;
+        max-width: 100% !important;
+        height: auto !important;
+        transform: none !important;
+    }
+
+    /* ---------------- ORDER HERO ---------------- */
+    .order-page .order-pro-hero {
+        min-height: 610px !important;
+        height: 610px !important;
+        overflow: hidden !important;
+    }
+
+    .order-page .order-pro-hero-inner {
+        position: relative !important;
+        width: calc(100% - 24px) !important;
+        min-height: 610px !important;
+        height: 610px !important;
+        display: block !important;
+    }
+
+    .order-page .order-pro-hero-copy {
+        position: static !important;
+        z-index: auto !important;
+        width: 100% !important;
+        padding: 43px 0 0 !important;
+        text-align: left !important;
+    }
+
+    .order-page .order-pro-hero-copy h1 {
+        position: relative !important;
+        z-index: 12 !important;
+        width: 58% !important;
+        margin: 0 !important;
+        font-size: clamp(54px, 16.8vw, 69px) !important;
+    }
+
+    .order-page .order-pro-title-line {
+        position: relative !important;
+        z-index: 12 !important;
+        width: 112px !important;
+        margin: 12px 0 18px !important;
+    }
+
+    .order-page .order-pro-hero-copy > p {
+        position: relative !important;
+        z-index: 12 !important;
+        max-width: 205px !important;
+        margin: 0 !important;
+        font-size: 12px !important;
+        line-height: 1.45 !important;
+    }
+
+    .order-page .order-pro-delivery-art {
+        position: absolute !important;
+        z-index: 10 !important;
+        inset: 0 !important;
+        width: 100% !important;
+        min-height: 0 !important;
+        height: 100% !important;
+        padding: 0 !important;
+        pointer-events: none !important;
+    }
+
+    .order-page .order-pro-delivery-art > img {
+        position: absolute !important;
+        z-index: 14 !important;
+        left: auto !important;
+        right: 12px !important;
+        bottom: 108px !important;
+        width: 172px !important;
+        max-width: none !important;
+        height: auto !important;
+        transform: none !important;
+    }
+
+    .order-page .order-pro-chat-bubble {
+        position: absolute !important;
+        z-index: 15 !important;
+        top: 126px !important;
+        left: auto !important;
+        right: 5px !important;
+        bottom: auto !important;
+        width: 122px !important;
+        min-height: 92px !important;
+        padding: 13px 10px !important;
+        border-width: 3px !important;
+        transform: rotate(2deg) !important;
+        pointer-events: auto !important;
+    }
+
+    .order-page .order-pro-chat-bubble::after {
+        left: 35px !important;
+        bottom: -19px !important;
+        width: 25px !important;
+        height: 27px !important;
+        border-left-width: 3px !important;
+        border-bottom-width: 3px !important;
+    }
+
+    .order-page .order-pro-chat-bubble span {
+        font-size: 14px !important;
+    }
+
+    .order-page .order-pro-chat-bubble strong {
+        font-size: 17px !important;
+    }
+
+    .order-page .order-pro-pizza-stage {
+        position: absolute !important;
+        z-index: 2 !important;
+        top: auto !important;
+        right: -135px !important;
+        bottom: 92px !important;
+        width: 365px !important;
+        height: 360px !important;
+        opacity: .72 !important;
+    }
+
+    .order-page .order-pro-benefits {
+        position: absolute !important;
+        z-index: 30 !important;
+        top: auto !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 16px !important;
+        width: 100% !important;
+        height: auto !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        grid-auto-rows: 78px !important;
+        gap: 7px !important;
+    }
+
+    .order-page .order-pro-benefits article {
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 78px !important;
+        height: 78px !important;
+        padding: 7px 4px !important;
+        background: rgba(255,255,255,.96) !important;
+        box-shadow: 0 5px 12px rgba(0,0,0,.12) !important;
+    }
+
+    .order-page .order-pro-benefits strong {
+        font-size: 9px !important;
+        line-height: 1 !important;
+    }
+
+    .order-page .order-pro-step-strip article {
+        min-width: 0 !important;
+        padding: 14px 9px !important;
+        gap: 8px !important;
+    }
+
+    .order-page .order-pro-step-strip strong {
+        font-size: 17px !important;
+        line-height: .9 !important;
+    }
+
+    .order-page .order-pro-step-strip small {
+        font-size: 9px !important;
+        line-height: 1.25 !important;
+    }
+}
+
+@media (max-width: 430px) {
+    .home-page .home-classic-hero {
+        min-height: 645px !important;
+        height: 645px !important;
+    }
+
+    .home-page .home-classic-pizza {
+        right: -160px !important;
+        bottom: 96px !important;
+        width: 430px !important;
+    }
+
+    .home-page .home-classic-chat {
+        top: 342px !important;
+        width: 112px !important;
+        min-height: 84px !important;
+    }
+
+    .home-page .home-classic-car {
+        left: 18px !important;
+        width: 150px !important;
+    }
+
+    .home-page .popular-section .section-head .btn {
+        width: 104px !important;
+        min-width: 104px !important;
+        font-size: 11px !important;
+    }
+
+    .contact-page .contact-panel-title {
+        font-size: 29px !important;
+    }
+
+    .contact-page .contact-card {
+        grid-template-columns: 34px minmax(0, 1fr) !important;
+        padding: 9px 6px !important;
+    }
+
+    .contact-page .contact-card .round,
+    .contact-page .contact-icon-img {
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    .contact-page .recruitment-actions {
+        grid-template-columns: minmax(0, 1fr) 132px !important;
+    }
+
+    .contact-page .recruitment-apply {
+        width: 132px !important;
+        min-width: 132px !important;
+        font-size: 13px !important;
+    }
+
+    .contact-page .recruitment-visual,
+    .contact-page .recruitment-visual img {
+        width: 160px !important;
+    }
+
+    .order-page .order-pro-hero {
+        min-height: 590px !important;
+        height: 590px !important;
+    }
+
+    .order-page .order-pro-hero-inner {
+        min-height: 590px !important;
+        height: 590px !important;
+    }
+
+    .order-page .order-pro-chat-bubble {
+        top: 122px !important;
+        right: 2px !important;
+        width: 116px !important;
+        min-height: 88px !important;
+    }
+
+    .order-page .order-pro-delivery-art > img {
+        right: 7px !important;
+        width: 162px !important;
+    }
+
+    .order-page .order-pro-pizza-stage {
+        right: -145px !important;
+        width: 350px !important;
+        height: 345px !important;
+    }
+}
