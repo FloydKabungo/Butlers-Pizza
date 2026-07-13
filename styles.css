@@ -10649,3 +10649,1178 @@ body.menu-page .site-footer {
         height: 68px;
     }
 }
+
+/* =========================================================
+   FINAL MOBILE POLISH — 13 JULY 2026
+   This is the last mobile layer and deliberately overrides
+   older experimental phone rules without touching desktop.
+   ========================================================= */
+@media (max-width: 760px) {
+    html {
+        scroll-padding-top: 108px;
+    }
+
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    main,
+    section,
+    .section,
+    .site-header,
+    .footer-inner,
+    .legal {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    /* ---------- HEADER ---------- */
+    .site-header {
+        min-height: 104px !important;
+        height: auto !important;
+        padding: 7px 10px 8px !important;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) auto !important;
+        grid-template-rows: 50px 38px !important;
+        gap: 5px 8px !important;
+        align-items: center !important;
+    }
+
+    .site-header .brand {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        min-width: 0 !important;
+        height: 50px !important;
+    }
+
+    .site-header .brand img {
+        width: min(188px, 51vw) !important;
+        height: 45px !important;
+        max-height: 45px !important;
+        object-fit: contain !important;
+        object-position: left center !important;
+    }
+
+    .site-header .top-order {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        min-height: 42px !important;
+        margin: 0 !important;
+        padding: 8px 12px !important;
+        gap: 7px !important;
+        border-radius: 10px !important;
+        font-size: 17px !important;
+        white-space: nowrap !important;
+    }
+
+    .site-header .main-nav {
+        grid-column: 1 / -1 !important;
+        grid-row: 2 !important;
+        order: initial !important;
+        width: 100% !important;
+        margin: 0 !important;
+        display: grid !important;
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 4px !important;
+        font-size: 15px !important;
+    }
+
+    .site-header .main-nav a {
+        min-width: 0 !important;
+        padding: 9px 2px 7px !important;
+        text-align: center !important;
+        border-radius: 7px 7px 0 0 !important;
+    }
+
+    /* ---------- SHARED ---------- */
+    .section {
+        width: 100% !important;
+        padding: 25px 12px !important;
+    }
+
+    .section-head {
+        gap: 10px !important;
+        margin-bottom: 15px !important;
+        align-items: flex-end !important;
+    }
+
+    .section-title {
+        font-size: clamp(34px, 10vw, 44px) !important;
+        line-height: .9 !important;
+    }
+
+    /* ---------- HOME HERO ---------- */
+    .home-page .home-classic-hero {
+        min-height: 590px !important;
+        height: auto !important;
+        overflow: hidden !important;
+    }
+
+    .home-page .home-classic-copy {
+        width: 100% !important;
+        padding: 27px 14px 250px !important;
+    }
+
+    .home-page .home-classic-line {
+        font-size: clamp(42px, 12.6vw, 56px) !important;
+        line-height: .87 !important;
+        white-space: normal !important;
+    }
+
+    .home-page .home-classic-line + .home-classic-line {
+        margin-top: 9px !important;
+    }
+
+    .home-page .home-classic-since {
+        margin: 17px 0 13px !important;
+        font-size: 15px !important;
+        letter-spacing: .19em !important;
+    }
+
+    .home-page .home-classic-description {
+        max-width: 260px !important;
+        margin: 0 0 15px !important;
+        font-size: 11px !important;
+        line-height: 1.4 !important;
+    }
+
+    .home-page .home-classic-description br {
+        display: none !important;
+    }
+
+    .home-page .home-classic-actions {
+        width: min(290px, 82%) !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 7px !important;
+    }
+
+    .home-page .home-classic-actions .btn {
+        width: 100% !important;
+        min-height: 40px !important;
+        padding: 7px 5px !important;
+        font-size: 13px !important;
+    }
+
+    .home-page .home-classic-pizza {
+        top: 265px !important;
+        right: -155px !important;
+        bottom: auto !important;
+        width: 505px !important;
+        max-width: none !important;
+        height: auto !important;
+    }
+
+    .home-page .home-classic-car {
+        left: 5px !important;
+        right: auto !important;
+        bottom: 112px !important;
+        width: 178px !important;
+        max-width: none !important;
+    }
+
+    .home-page .home-classic-chat {
+        top: 318px !important;
+        left: 14px !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: 102px !important;
+        min-height: 73px !important;
+        padding: 10px !important;
+        border-width: 3px !important;
+    }
+
+    /* Fix the stretched benefit-card bug: older CSS left top + bottom set. */
+    .home-page .home-classic-badges {
+        position: absolute !important;
+        top: auto !important;
+        left: 9px !important;
+        right: 9px !important;
+        bottom: 28px !important;
+        width: auto !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        grid-auto-rows: 80px !important;
+        align-items: stretch !important;
+        gap: 6px !important;
+    }
+
+    .home-page .home-classic-badge {
+        position: relative !important;
+        width: 100% !important;
+        height: 80px !important;
+        min-height: 80px !important;
+        max-height: 80px !important;
+        padding: 7px 4px 6px !important;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        grid-template-rows: 36px auto !important;
+        gap: 4px !important;
+        align-content: center !important;
+        align-items: center !important;
+        justify-items: center !important;
+        text-align: center !important;
+        overflow: hidden !important;
+        border-width: 2px !important;
+        border-radius: 11px !important;
+    }
+
+    .home-page .home-classic-badge-icon {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    .home-page .home-classic-badge-icon svg {
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .home-page .home-classic-badge-copy {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .home-page .home-classic-badge-copy strong {
+        margin: 0 !important;
+        font-size: 10px !important;
+        line-height: .95 !important;
+        overflow-wrap: normal !important;
+    }
+
+    .home-page .home-classic-badge-copy small {
+        display: none !important;
+    }
+
+    /* ---------- HOME CONTENT GRIDS ---------- */
+    .home-page .feature-band,
+    .contact-page .feature-band.light {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 1px !important;
+        padding: 1px !important;
+    }
+
+    .home-page .feature-band article,
+    .contact-page .feature-band.light article {
+        min-height: 105px !important;
+        padding: 12px 9px !important;
+        display: grid !important;
+        grid-template-columns: 38px minmax(0, 1fr) !important;
+        grid-template-rows: auto auto !important;
+        gap: 3px 7px !important;
+        align-content: center !important;
+        align-items: center !important;
+        text-align: left !important;
+        border: 0 !important;
+    }
+
+    .home-page .feature-band article:nth-child(5),
+    .contact-page .feature-band.light article:nth-child(5) {
+        grid-column: 1 / -1 !important;
+        min-height: 82px !important;
+    }
+
+    .home-page .feature-band .feature-icon,
+    .contact-page .feature-band.light .feature-icon {
+        grid-row: 1 / 3 !important;
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
+        margin: 0 !important;
+        font-size: 27px !important;
+    }
+
+    .home-page .feature-band h3,
+    .contact-page .feature-band.light h3 {
+        margin: 0 !important;
+        font-size: 15px !important;
+    }
+
+    .home-page .feature-band p,
+    .contact-page .feature-band.light p {
+        margin: 0 !important;
+        font-size: 9px !important;
+    }
+
+    .home-page .pizza-grid,
+    .home-page .deal-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 9px !important;
+    }
+
+    .home-page .pizza-card img {
+        height: 106px !important;
+    }
+
+    .home-page .pizza-body {
+        padding: 10px !important;
+    }
+
+    .home-page .pizza-body h3 {
+        min-height: 34px !important;
+        font-size: 18px !important;
+    }
+
+    .home-page .pizza-info p {
+        min-height: 37px !important;
+        font-size: 9px !important;
+    }
+
+    .home-page .price {
+        font-size: 17px !important;
+    }
+
+    .home-page .order-card {
+        width: 100% !important;
+        padding: 7px 4px !important;
+        font-size: 12px !important;
+        text-align: center !important;
+    }
+
+    .home-page .deal-card {
+        min-height: 218px !important;
+        padding: 14px 12px !important;
+    }
+
+    /* Home story: force the timeline into a genuine 2 x 2 grid. */
+    .home-page .story-section {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 108px !important;
+        gap: 12px !important;
+        align-items: center !important;
+        text-align: left !important;
+    }
+
+    .home-page .story-title {
+        min-width: 0 !important;
+    }
+
+    .home-page .story-badge {
+        width: 108px !important;
+        max-width: 108px !important;
+        margin: 0 !important;
+        justify-self: end !important;
+    }
+
+    .home-page .timeline {
+        grid-column: 1 / -1 !important;
+        width: 100% !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 9px !important;
+    }
+
+    .home-page .timeline article {
+        min-width: 0 !important;
+        min-height: 145px !important;
+        padding: 12px 8px !important;
+        display: grid !important;
+        align-content: center !important;
+        justify-items: center !important;
+        text-align: center !important;
+        border: 1px solid #e2ded5 !important;
+        border-radius: 13px !important;
+        background: #fff !important;
+        box-shadow: 0 6px 16px rgba(0,0,0,.08) !important;
+    }
+
+    .home-page .timeline article::after {
+        display: none !important;
+    }
+
+    .home-page .timeline .timeline-icon,
+    .home-page .timeline .icon {
+        width: 70px !important;
+        height: 70px !important;
+        margin: 0 auto 6px !important;
+    }
+
+    .home-page .timeline h3 {
+        margin: 0 0 5px !important;
+        font-size: 24px !important;
+    }
+
+    .home-page .timeline p {
+        max-width: none !important;
+        margin: 0 !important;
+        font-size: 9px !important;
+        line-height: 1.35 !important;
+    }
+
+    .locations-section .locations {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 9px !important;
+    }
+
+    /* ---------- MENU ---------- */
+    .menu-page .menu-mockup-hero,
+    .menu-page .menu-mockup-hero.menu-hero-fixed {
+        min-height: 318px !important;
+        height: 318px !important;
+        display: grid !important;
+        grid-template-columns: 43% 57% !important;
+        grid-template-rows: 1fr !important;
+        overflow: hidden !important;
+    }
+
+    .menu-page .menu-mockup-copy,
+    .menu-page .menu-hero-fixed .menu-mockup-copy {
+        min-width: 0 !important;
+        padding: 31px 8px 37px 14px !important;
+    }
+
+    .menu-page .menu-mockup-title span,
+    .menu-page .menu-hero-fixed .menu-mockup-title span {
+        font-size: clamp(35px, 10.5vw, 44px) !important;
+    }
+
+    .menu-page .menu-mockup-title strong,
+    .menu-page .menu-hero-fixed .menu-mockup-title strong {
+        margin-top: 8px !important;
+        font-size: clamp(41px, 12vw, 50px) !important;
+    }
+
+    .menu-page .menu-mockup-copy p,
+    .menu-page .menu-hero-fixed .menu-mockup-copy p {
+        margin-top: 18px !important;
+        font-size: 10px !important;
+        line-height: 1.45 !important;
+    }
+
+    .menu-page .menu-mockup-visual {
+        min-height: 318px !important;
+        height: 318px !important;
+    }
+
+    .menu-page .menu-mockup-pizza {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: 51% center !important;
+    }
+
+    .menu-page .tabs-band.menu-tabs,
+    .menu-page .tabs-band.menu-tabs.menu-mockup-tabs {
+        display: grid !important;
+        grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+        gap: 7px 3px !important;
+        padding: 12px 7px 13px !important;
+    }
+
+    .menu-page .menu-tabs .tab-item,
+    .menu-page .menu-mockup-tabs .tab-item {
+        width: auto !important;
+        min-width: 0 !important;
+        height: 74px !important;
+        padding: 0 !important;
+        font-size: 9px !important;
+    }
+
+    .menu-page .menu-tabs .tab-icon,
+    .menu-page .menu-mockup-tabs .tab-icon {
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px !important;
+    }
+
+    .menu-page .menu-tools {
+        grid-column: 1 / -1 !important;
+        width: 100% !important;
+        margin: 2px 0 0 !important;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1.35fr) minmax(108px, .65fr) !important;
+        gap: 7px !important;
+    }
+
+    .menu-page .menu-tools .search,
+    .menu-page .menu-tools .sort {
+        width: 100% !important;
+        min-width: 0 !important;
+        height: 40px !important;
+        padding: 0 10px !important;
+        font-size: 10px !important;
+    }
+
+    .menu-page .complete-menu-section {
+        width: 100% !important;
+        padding: 20px 10px 34px !important;
+    }
+
+    .menu-page .complete-menu-intro {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1.25fr) minmax(108px, .75fr) !important;
+        gap: 8px !important;
+        padding: 13px 11px !important;
+    }
+
+    .menu-page .full-menu-grid,
+    .menu-page .kids-grid,
+    .menu-page .complete-deals-grid,
+    .menu-page .compact-menu-grid,
+    .menu-page .toppings-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 9px !important;
+    }
+
+    .menu-page .full-menu-photo,
+    .menu-page .kids-grid .full-menu-photo {
+        height: 104px !important;
+    }
+
+    .menu-page .full-menu-body {
+        padding: 9px !important;
+    }
+
+    .menu-page .full-menu-body h3,
+    .menu-page .kids-grid .full-menu-body h3 {
+        min-height: 31px !important;
+        margin-bottom: 4px !important;
+        font-size: 17px !important;
+    }
+
+    .menu-page .full-menu-body > p {
+        min-height: 39px !important;
+        margin-bottom: 8px !important;
+        font-size: 8px !important;
+    }
+
+    .menu-page .menu-size-prices span {
+        font-size: 6px !important;
+    }
+
+    .menu-page .menu-size-prices strong {
+        font-size: 14px !important;
+    }
+
+    .menu-page .menu-order-button {
+        width: 100% !important;
+        padding: 7px 4px !important;
+        font-size: 11px !important;
+        text-align: center !important;
+    }
+
+    /* ---------- CONTACT HERO ---------- */
+    .contact-page .contact-redesign-hero {
+        min-height: 390px !important;
+        height: 390px !important;
+        overflow: hidden !important;
+    }
+
+    .contact-page .contact-redesign-inner {
+        width: calc(100% - 22px) !important;
+        min-height: 390px !important;
+        height: 390px !important;
+        display: grid !important;
+        grid-template-columns: 55% 45% !important;
+        align-items: stretch !important;
+        text-align: left !important;
+    }
+
+    .contact-page .contact-redesign-copy {
+        min-width: 0 !important;
+        padding: 58px 0 34px !important;
+    }
+
+    .contact-page .contact-redesign-copy h1 {
+        max-width: 100% !important;
+        font-size: clamp(31px, 9.5vw, 40px) !important;
+        line-height: .9 !important;
+        overflow-wrap: normal !important;
+    }
+
+    .contact-page .contact-redesign-copy h1 strong {
+        margin-top: 6px !important;
+    }
+
+    .contact-page .contact-redesign-underline {
+        width: 108px !important;
+        height: 5px !important;
+        margin: 11px 0 14px 2px !important;
+    }
+
+    .contact-page .contact-redesign-copy p {
+        max-width: 190px !important;
+        margin: 0 !important;
+        font-size: 10px !important;
+        line-height: 1.45 !important;
+    }
+
+    .contact-page .contact-redesign-copy p br {
+        display: none !important;
+    }
+
+    .contact-page .contact-redesign-art {
+        position: relative !important;
+        width: 100% !important;
+        height: 390px !important;
+        margin: 0 !important;
+        overflow: visible !important;
+    }
+
+    .contact-page .contact-redesign-phone {
+        position: absolute !important;
+        right: -44px !important;
+        left: auto !important;
+        bottom: 14px !important;
+        top: auto !important;
+        width: 245px !important;
+        max-width: none !important;
+        margin: 0 !important;
+    }
+
+    .contact-page .contact-redesign-bubble {
+        position: absolute !important;
+        top: 50px !important;
+        left: -18px !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: 116px !important;
+        min-height: 83px !important;
+        padding: 11px !important;
+        border-width: 3px !important;
+        font-size: 21px !important;
+        transform: rotate(-4deg) !important;
+    }
+
+    .contact-page .contact-redesign-pizza-wrap {
+        display: none !important;
+    }
+
+    /* ---------- CONTACT CONTENT ---------- */
+    .contact-page .contact-section {
+        padding: 22px 10px !important;
+    }
+
+    .contact-page .contact-layout {
+        display: block !important;
+    }
+
+    .contact-page .contact-info-panel {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+    }
+
+    .contact-page .contact-panel-title {
+        grid-column: 1 / -1 !important;
+        margin-bottom: 6px !important;
+        font-size: 32px !important;
+    }
+
+    .contact-page .contact-card {
+        min-width: 0 !important;
+        min-height: 112px !important;
+        margin: 0 !important;
+        padding: 9px 7px !important;
+        display: grid !important;
+        grid-template-columns: 38px minmax(0, 1fr) !important;
+        gap: 6px !important;
+    }
+
+    .contact-page .contact-card .round,
+    .contact-page .contact-icon-img {
+        width: 38px !important;
+        height: 38px !important;
+    }
+
+    .contact-page .contact-card h3 {
+        font-size: 14px !important;
+    }
+
+    .contact-page .contact-card strong {
+        margin: 3px 0 !important;
+        font-size: 11px !important;
+        line-height: 1.15 !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .contact-page .contact-card p {
+        font-size: 8px !important;
+    }
+
+    .contact-page .contact-form-panel {
+        margin-top: 22px !important;
+    }
+
+    .contact-page .form-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+    }
+
+    .contact-page .form-grid input,
+    .contact-page .form-grid textarea {
+        width: 100% !important;
+        min-width: 0 !important;
+        height: 47px !important;
+        padding: 0 10px !important;
+        font-size: 12px !important;
+    }
+
+    .contact-page .form-grid .wide,
+    .contact-page .form-grid textarea,
+    .contact-page .form-grid .btn {
+        grid-column: 1 / -1 !important;
+    }
+
+    .contact-page .form-grid textarea {
+        height: 135px !important;
+        padding-top: 11px !important;
+    }
+
+    .contact-page .hours-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 1px !important;
+    }
+
+    /* Recruitment: keep the car inside the yellow banner. */
+    .contact-page .recruitment-banner {
+        overflow: hidden !important;
+    }
+
+    .contact-page .recruitment-inner {
+        position: relative !important;
+        width: calc(100% - 24px) !important;
+        min-height: 520px !important;
+        padding: 26px 0 24px !important;
+        display: block !important;
+    }
+
+    .contact-page .recruitment-copy {
+        position: relative !important;
+        z-index: 3 !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .contact-page .recruitment-kicker {
+        font-size: 25px !important;
+    }
+
+    .contact-page .recruitment-copy h2 {
+        margin: 0 0 15px !important;
+        font-size: clamp(58px, 18vw, 74px) !important;
+        line-height: .7 !important;
+    }
+
+    .contact-page .recruitment-details {
+        width: 100% !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 11px !important;
+    }
+
+    .contact-page .recruitment-family,
+    .contact-page .recruitment-job {
+        min-width: 0 !important;
+    }
+
+    .contact-page .recruitment-details h3 {
+        font-size: 17px !important;
+    }
+
+    .contact-page .recruitment-details p,
+    .contact-page .recruitment-family p {
+        font-size: 9px !important;
+        line-height: 1.35 !important;
+    }
+
+    .contact-page .recruitment-actions {
+        position: absolute !important;
+        z-index: 5 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 24px !important;
+        margin: 0 !important;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) minmax(132px, .72fr) !important;
+        gap: 8px !important;
+        align-items: center !important;
+    }
+
+    .contact-page .recruitment-email {
+        min-width: 0 !important;
+        font-size: 12px !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .contact-page .recruitment-apply {
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 42px !important;
+        padding: 8px 9px !important;
+        font-size: 14px !important;
+    }
+
+    .contact-page .recruitment-visual {
+        position: absolute !important;
+        z-index: 2 !important;
+        right: -12px !important;
+        bottom: 78px !important;
+        width: 155px !important;
+        height: 112px !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+        pointer-events: none !important;
+    }
+
+    .contact-page .recruitment-visual::after {
+        left: 10% !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        height: 18px !important;
+    }
+
+    .contact-page .recruitment-visual img {
+        width: 165px !important;
+        max-width: none !important;
+        height: auto !important;
+        transform: none !important;
+    }
+
+    /* ---------- STORY PAGE ---------- */
+    .story-page .story-intro {
+        padding: 28px 12px 34px !important;
+    }
+
+    .story-page .story-intro-inner {
+        display: grid !important;
+        grid-template-columns: 108px minmax(0, 1fr) !important;
+        gap: 11px !important;
+        align-items: start !important;
+    }
+
+    .story-page .story-anniversary {
+        position: sticky !important;
+        top: 116px !important;
+    }
+
+    .story-page .story-anniversary img {
+        width: 108px !important;
+        max-width: 108px !important;
+    }
+
+    .story-page .story-copy p {
+        margin-bottom: 13px !important;
+        font-size: 11px !important;
+        line-height: 1.45 !important;
+    }
+
+    .story-page .story-promise {
+        padding: 32px 10px 25px !important;
+    }
+
+    .story-page .story-trust-row {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+        text-align: center !important;
+    }
+
+    .story-page .story-values-inner {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 5px !important;
+    }
+
+    .story-page .story-values article {
+        min-width: 0 !important;
+        min-height: 126px !important;
+        padding: 11px 5px !important;
+    }
+
+    /* ---------- ORDER HERO ---------- */
+    .order-page .order-pro-hero {
+        min-height: 510px !important;
+        height: 510px !important;
+        overflow: hidden !important;
+    }
+
+    .order-page .order-pro-hero-inner {
+        position: relative !important;
+        width: calc(100% - 22px) !important;
+        min-height: 510px !important;
+        height: 510px !important;
+        display: grid !important;
+        grid-template-columns: 56% 44% !important;
+        align-items: stretch !important;
+    }
+
+    .order-page .order-pro-hero-copy {
+        position: relative !important;
+        z-index: 8 !important;
+        padding: 55px 0 120px !important;
+        text-align: left !important;
+    }
+
+    .order-page .order-pro-hero-copy h1 {
+        margin: 0 !important;
+        font-size: clamp(53px, 16.5vw, 68px) !important;
+    }
+
+    .order-page .order-pro-title-line {
+        width: 114px !important;
+        height: 6px !important;
+        margin: 13px 0 18px !important;
+    }
+
+    .order-page .order-pro-hero-copy > p {
+        max-width: 190px !important;
+        margin: 0 !important;
+        font-size: 12px !important;
+        line-height: 1.45 !important;
+    }
+
+    .order-page .order-pro-delivery-art {
+        position: relative !important;
+        z-index: 8 !important;
+        min-height: 390px !important;
+        padding: 118px 0 100px !important;
+        align-self: stretch !important;
+    }
+
+    .order-page .order-pro-delivery-art > img {
+        position: absolute !important;
+        left: -28px !important;
+        right: auto !important;
+        bottom: 106px !important;
+        width: 190px !important;
+        max-width: none !important;
+        transform: none !important;
+    }
+
+    .order-page .order-pro-chat-bubble {
+        position: absolute !important;
+        top: 48px !important;
+        left: 49% !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: 112px !important;
+        min-height: 88px !important;
+        padding: 11px !important;
+        transform: translateX(-50%) rotate(3deg) !important;
+    }
+
+    .order-page .order-pro-pizza-stage {
+        top: 172px !important;
+        right: -145px !important;
+        bottom: auto !important;
+        width: 350px !important;
+        height: 345px !important;
+        opacity: .58 !important;
+    }
+
+    .order-page .order-pro-benefits {
+        position: absolute !important;
+        z-index: 20 !important;
+        top: auto !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 22px !important;
+        width: auto !important;
+        height: auto !important;
+        margin: 0 !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        grid-auto-rows: 78px !important;
+        gap: 6px !important;
+    }
+
+    .order-page .order-pro-benefits article {
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 78px !important;
+        height: 78px !important;
+        padding: 7px 4px !important;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 4px !important;
+        align-content: center !important;
+        justify-items: center !important;
+        text-align: center !important;
+        border-radius: 10px !important;
+        background: rgba(255,255,255,.94) !important;
+    }
+
+    .order-page .order-pro-mini-icon,
+    .order-page .order-pro-mini-icon svg {
+        width: 31px !important;
+        height: 31px !important;
+    }
+
+    .order-page .order-pro-benefits strong {
+        font-size: 10px !important;
+        line-height: .95 !important;
+    }
+
+    .order-page .order-pro-benefits small {
+        display: none !important;
+    }
+
+    /* ---------- ORDER CHECKOUT ---------- */
+    .order-page .order-pro-step-strip,
+    .order-page .order-pro-step-strip-delivery-only {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+    }
+
+    .order-page .order-pro-checkout-grid,
+    .order-page .order-pro-checkout-grid-delivery-only {
+        width: 100% !important;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    .order-page .order-pro-form {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+    }
+
+    .order-page .order-pro-field-wide,
+    .order-page .order-pro-payment-button,
+    .order-page .order-pro-secure-note,
+    .order-page .order-pro-form-status {
+        grid-column: 1 / -1 !important;
+    }
+
+    .order-page .order-pro-addons-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+    }
+
+    .order-page .order-pro-addons-grid .order-addon-card {
+        min-width: 0 !important;
+        min-height: 126px !important;
+        padding: 8px 7px 38px 70px !important;
+    }
+
+    /* ---------- FOOTER ---------- */
+    .footer-inner {
+        width: 100% !important;
+        padding: 25px 14px !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 22px 15px !important;
+    }
+
+    .footer-logo {
+        grid-column: 1 / -1 !important;
+        display: grid !important;
+        grid-template-columns: 100px minmax(0, 1fr) !important;
+        gap: 12px !important;
+        align-items: center !important;
+    }
+
+    .footer-logo img {
+        width: 100px !important;
+    }
+
+    .floating-order {
+        width: 76px !important;
+        height: 76px !important;
+        justify-self: end !important;
+    }
+
+    .legal {
+        padding: 10px 12px !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 5px 10px !important;
+        text-align: center !important;
+        font-size: 9px !important;
+    }
+}
+
+@media (max-width: 430px) {
+    .site-header .brand img {
+        width: min(162px, 46vw) !important;
+        height: 42px !important;
+    }
+
+    .site-header .top-order {
+        padding: 7px 9px !important;
+        font-size: 15px !important;
+    }
+
+    .site-header .main-nav {
+        font-size: 14px !important;
+    }
+
+    .home-page .home-classic-hero {
+        min-height: 575px !important;
+    }
+
+    .home-page .home-classic-pizza {
+        right: -170px !important;
+        width: 490px !important;
+    }
+
+    .home-page .home-classic-badge-copy strong {
+        font-size: 9px !important;
+    }
+
+    .home-page .timeline .timeline-icon,
+    .home-page .timeline .icon {
+        width: 64px !important;
+        height: 64px !important;
+    }
+
+    .contact-page .contact-redesign-copy h1 {
+        font-size: 31px !important;
+    }
+
+    .contact-page .contact-redesign-phone {
+        right: -55px !important;
+        width: 230px !important;
+    }
+
+    .contact-page .contact-redesign-bubble {
+        left: -22px !important;
+        width: 108px !important;
+        font-size: 19px !important;
+    }
+
+    .contact-page .recruitment-inner {
+        min-height: 535px !important;
+    }
+
+    .contact-page .recruitment-visual {
+        right: -18px !important;
+        width: 145px !important;
+    }
+
+    .contact-page .recruitment-visual img {
+        width: 155px !important;
+    }
+
+    .story-page .story-intro-inner {
+        grid-template-columns: 98px minmax(0, 1fr) !important;
+        gap: 9px !important;
+    }
+
+    .story-page .story-anniversary img {
+        width: 98px !important;
+        max-width: 98px !important;
+    }
+
+    .order-page .order-pro-hero-copy h1 {
+        font-size: 54px !important;
+    }
+
+    .order-page .order-pro-delivery-art > img {
+        width: 174px !important;
+    }
+}
